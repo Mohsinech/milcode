@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  position: relative;
+  background-color: black;
+}
+
+/* Fonts */
+
+/* Neue Montreal */
+@font-face {
+  font-family: "mon";
+  src: url("../public/assets/fonts/montreal/NeueMontreal-Bold.woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mon";
+  src: url("../public/assets/fonts/montreal/NeueMontreal-Medium.woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mon";
+  src: url("../public/assets/fonts/montreal/NeueMontreal-Regular.woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mon";
+  src: url("../public/assets/fonts/montreal/NeueMontreal-Light.woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Tomato Grotesk */
+
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Black.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Bold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-SemiBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Medium.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Light.ttf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* General sans */
+@font-face {
+  font-family: "sans";
+  src: url("../public/assets/fonts/general/GeneralSans-Bold.otf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sans";
+  src: url("../public/assets/fonts/general/GeneralSans-Semibold.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sans";
+  src: url("../public/assets/fonts/general/GeneralSans-Medium.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sans";
+  src: url("../public/assets/fonts/general/GeneralSans-Regular.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "sans";
+  src: url("../public/assets/fonts/general/GeneralSans-Light.otf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
