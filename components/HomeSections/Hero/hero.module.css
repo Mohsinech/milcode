@@ -1,6 +1,9 @@
 .hero {
   height: 100dvh;
-  /* background-color: #fff; */
+  background: url("/assets/images/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   gap: 8rem;
@@ -58,7 +61,7 @@
 }
 
 .shortDescription {
-  width: 50%;
+  width: 60%;
 }
 
 .wrapperContent {
@@ -70,9 +73,8 @@
 }
 
 .wrapperContent p {
-  font-family: "mon", sans-serif;
+  font-family: "sans", sans-serif;
   font-size: 1rem;
-  letter-spacing: 0.025rem;
 }
 
 .wrapperContent ul li {

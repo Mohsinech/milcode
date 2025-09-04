@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
+        <link rel="icon" type="icon" href="/favicon.ico" />
         <body>
           <Header />
           {children}

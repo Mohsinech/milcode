@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { TransitionLink } from "@/utils";
 
 const description = [
-  "Mico Supply is a design & development agency crafting web solutions that strengthen your online presence. From websites to digital experiences, we help brands, creators, and companies stand out online.",
+  "Milcode Studio is a design & development agency. Creating web solutions that strengthen your online presence.  We help brands, creators, and companies stand out online.",
 ];
 
 const Hero = () => {
@@ -189,7 +189,7 @@ const Hero = () => {
             initial={{ scale: 1, opacity: 0 }}
             animate={{ opacity: 1 }}
             whileHover={{ scale: 0.9 }}
-            transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
+            transition={{ duration: 1.5, ease: [0.87, 0.13, 0, 1] }}
             className={styles.wrapper}
           >
             <div className={styles.ctaBtn}>
@@ -215,19 +215,35 @@ const Hero = () => {
               .split(". ")
               .filter((line) => line.trim() !== "")
               .map((line, index) => (
-                <p key={index}>{line.trim()}</p>
+                <div className="overflow-hidden" key={index}>
+                  <motion.p
+                    initial={{ y: 100 }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.1,
+                      ease: [0.87, 0.13, 0, 1],
+                    }}
+                  >
+                    {line.trim()}
+                  </motion.p>
+                </div>
               ))}
           </div>
 
           {/* wer' open closed */}
           <ul>
-            <li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
+            >
               <TransitionLink
                 label="info@milcode.com"
                 href="mailto:info@milcode.com"
               />
               <div className={styles.indicator}></div>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

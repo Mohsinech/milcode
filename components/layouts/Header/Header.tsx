@@ -21,6 +21,7 @@ const Header = () => {
   const { scrollY } = useScroll();
 
   const paddingY = useTransform(scrollY, [0, 300], ["2rem", "1rem"]);
+  const transformY = useTransform(scrollY, [0, 300], [0, -100]);
 
   return (
     <motion.header
@@ -28,7 +29,7 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
       className={styles.header}
-      style={{ padding: paddingY }}
+      style={{ padding: paddingY, y: transformY }}
     >
       <div className={styles.brand}>
         <Link href="/" className={styles.logo}>
