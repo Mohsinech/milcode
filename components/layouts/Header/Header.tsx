@@ -23,7 +23,13 @@ const Header = () => {
   const paddingY = useTransform(scrollY, [0, 300], ["2rem", "1rem"]);
 
   return (
-    <motion.header className={styles.header} style={{ padding: paddingY }}>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
+      className={styles.header}
+      style={{ padding: paddingY }}
+    >
       <div className={styles.brand}>
         <Link href="/" className={styles.logo}>
           <h2>milcode </h2>
@@ -54,7 +60,7 @@ const Header = () => {
       >
         <div className={styles.ctaBtn}>
           <TransitionLink
-            label="Let's Talk"
+            label="Get a quote"
             href="/contact"
             style={{
               color: "#000",

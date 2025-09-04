@@ -1,0 +1,105 @@
+.hero {
+  height: 100dvh;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+  padding: 12rem 2rem;
+}
+
+.paths {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  gap: 3rem;
+}
+
+.pages ul li a,
+.socials ul li a {
+  color: #ccc;
+  font-family: "sans", sans-serif;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Agency Data */
+.agencyData {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.intro {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: #f1f1f1;
+  font-family: "mon", sans-serif;
+}
+
+.ctaBtn {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  background-color: #f1f1f1;
+  width: fit-content;
+  padding: 0.6em 1.5rem;
+  border-radius: 0.2rem;
+
+  cursor: pointer;
+}
+
+.shortDescription {
+  width: 50%;
+}
+
+.wrapperContent {
+  color: #f1f1f1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.wrapperContent p {
+  font-family: "mon", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.025rem;
+}
+
+.wrapperContent ul li {
+  position: relative;
+}
+
+.wrapperContent ul li .indicator {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: -0.3rem;
+}
+
+.wrapperContent ul li .indicator:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.wrapperContent ul li:hover .indicator:after,
+.wrapperContent ul li.active .indicator:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
