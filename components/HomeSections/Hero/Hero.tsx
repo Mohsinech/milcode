@@ -166,7 +166,7 @@ const Hero = () => {
                   ease: [0.87, 0.13, 0, 1],
                 }}
               >
-                Independent design & technology
+                Independent design &
               </motion.h1>
             </div>
             <div className="relative overflow-hidden">
@@ -179,7 +179,20 @@ const Hero = () => {
                   ease: [0.87, 0.13, 0, 1],
                 }}
               >
-                agency. Ma • Casablanca.{" "}
+                technology agency.
+              </motion.h1>
+            </div>{" "}
+            <div className="relative overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                  ease: [0.87, 0.13, 0, 1],
+                }}
+              >
+                Ma • Casablanca.{" "}
               </motion.h1>
             </div>
           </div>
