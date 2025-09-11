@@ -1,0 +1,23 @@
+.featured {
+  width: 100%;
+  height: 100%;
+  padding: 4rem 2rem;
+}
+
+.gridProject {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.projectF1 {
+  width: 100%;
+  background-color: burlywood; /* Just a label unitl add real project*/
+  height: 110dvh;
+}
+
+.projectF2 {
+  width: 100%;
+  background-color: teal; /* Just a label unitl add real project*/
+  height: 110dvh;
+}

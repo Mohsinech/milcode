@@ -2,8 +2,9 @@
 
 import React from "react";
 import styles from "./app.module.css";
-import { Hero, Intro } from "@/components/HomeSections";
+import { FeaturedProject, Hero, Intro } from "@/components/HomeSections";
 import { useLenis } from "@/hooks/useLenis";
+import { Link } from "next-view-transitions";
 
 export default function Home() {
   // track scroll
@@ -16,8 +17,19 @@ export default function Home() {
       <section className="h-screen bg-[#F1F1F1] z-[9999999]"></section>
       {/* Intro */}
       <Intro />
-      <section className="h-screen bg-yellow-400"></section>
-      <section className="h-screen bg-black"></section>
+      {/* Featured Project */}
+      <FeaturedProject />
+      {/* Get more info */}
+      <section className={styles.briefAbout}>
+        <div className={styles.content}>
+          <h1>
+            Get more about{" "}
+            <span>
+              <Link href="/about">Milcode Studio</Link>
+            </span>
+          </h1>
+        </div>
+      </section>
     </main>
   );
 }
