@@ -56,7 +56,7 @@ const Header = () => {
       <motion.div
         initial={{ scale: 1 }}
         whileHover={{ scale: 0.9 }}
-        transition={{ duration: 0.7, ease: [0.87, 0.13, 0, 1] }}
+        transition={{ duration: 0.8, ease: [0.87, 0.13, 0, 1] }}
         className={styles.wrapper}
       >
         <div className={styles.ctaBtn}>

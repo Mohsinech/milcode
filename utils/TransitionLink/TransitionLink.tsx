@@ -23,7 +23,7 @@ const TransitionLink: React.FC<TransitionLinkProps> = ({
   return (
     <motion.a
       href={href}
-      className={styles.link} // optional for CSS styling
+      className={styles.link}
       initial="initial"
       whileHover="hoverd"
       style={{ display: "inline-block", ...style }}
