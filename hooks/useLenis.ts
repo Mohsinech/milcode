@@ -1,31 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
-export function useLenis(options?: ConstructorParameters<typeof Lenis>[0]) {
-  const lenisRef = useRef<Lenis | null>(null);
-
+const useLenis = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      ...options,
-      // no custom easing here, use default
+      lerp: 0.1,
+      wheelMultiplier: 0.3, 
+      touchMultiplier: 0.5,
+      infinite: false,
     });
 
-    lenisRef.current = lenis;
-
-    function raf(time: number) {
+    const handleScroll = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+      requestAnimationFrame(handleScroll);
+    };
 
-    requestAnimationFrame(raf);
+    requestAnimationFrame(handleScroll);
 
     return () => {
       lenis.destroy();
-      lenisRef.current = null;
     };
-  }, [options]);
+  }, []);
+};
 
-  return lenisRef;
-}
+export default useLenis;

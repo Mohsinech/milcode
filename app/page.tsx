@@ -3,8 +3,8 @@
 import React from "react";
 import styles from "./app.module.css";
 import { FeaturedProject, Hero, Intro } from "@/components/HomeSections";
-import { useLenis } from "@/hooks/useLenis";
 import { Link } from "next-view-transitions";
+import useLenis from "@/hooks/useLenis";
 
 export default function Home() {
   // track scroll

@@ -244,7 +244,6 @@ const Hero = () => {
               ))}
           </div>
 
-          {/* wer' open closed */}
           <ul>
             <motion.li
               initial={{ opacity: 0 }}
