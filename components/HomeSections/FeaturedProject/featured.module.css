@@ -1,7 +1,7 @@
 .featured {
   width: 100%;
   height: 100%;
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem 2rem;
 }
 
 .gridProject {
@@ -12,12 +12,27 @@
 
 .projectF1 {
   width: 100%;
-  background-color: burlywood; /* Just a label unitl add real project*/
-  height: 110dvh;
+  background: url("/assets/images/tennisBg.png"); /* Just a label unitl add real project*/
+  height: 105dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projectF2 {
   width: 100%;
-  background-color: teal; /* Just a label unitl add real project*/
-  height: 110dvh;
+  background-color: #dfe1e3;
+  height: 105dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 95%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

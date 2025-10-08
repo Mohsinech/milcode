@@ -2,7 +2,12 @@
 
 import React from "react";
 import styles from "./app.module.css";
-import { FeaturedProject, Hero, Intro } from "@/components/HomeSections";
+import {
+  FeaturedProject,
+  Hero,
+  Intro,
+  Project,
+} from "@/components/HomeSections";
 import { Link } from "next-view-transitions";
 import useLenis from "@/hooks/useLenis";
 
@@ -14,8 +19,7 @@ export default function Home() {
     <main className={styles.main}>
       <Hero />
       {/* Project */}
-      <section className="h-screen bg-[#F1F1F1] z-[9999999]"></section>
-      {/* Intro */}
+      <Project />
       <Intro />
       {/* Featured Project */}
       <FeaturedProject />

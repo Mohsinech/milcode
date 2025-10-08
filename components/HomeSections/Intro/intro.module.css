@@ -1,6 +1,6 @@
 .intro {
   width: 100%;
-  height: 100dvh; /* keeps enough scroll space for the animation */
+  height: fit-content;
   display: flex;
   justify-content: flex-start; /* top of the page */
   align-items: center; /* center horizontally */
@@ -11,14 +11,13 @@
 
 .wrapper {
   width: 100%;
-  height: 100dvh; /* keeps enough scroll space for the animation */
+  height: fit-content;
   display: flex;
   justify-content: flex-start; /* top of the page */
   align-items: center; /* center horizontally */
   flex-direction: column;
   position: sticky;
   top: 0;
-  padding: 5rem 0;
 }
 
 .introContent {

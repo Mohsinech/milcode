@@ -1,34 +1,28 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import styles from "./intro.module.css";
 
 const Intro = () => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+  const isInView = useInView(ref, { once: true, margin: "-20% 0px" });
 
   const firstWord = "Crafted".split("");
   const secondWord = "Innovation".split("");
 
-  // create individual y motion values for each letter
-  const yMotionsFirst = firstWord.map((_, i) =>
-    useTransform(
-      scrollYProgress,
-      [0 + i * 0.02, 0.5 + i * 0.02],
-      ["150%", "0%"]
-    )
-  );
-  const yMotionsSecond = secondWord.map((_, i) =>
-    useTransform(
-      scrollYProgress,
-      [0 + i * 0.02, 0.5 + i * 0.02],
-      ["150%", "0%"]
-    )
-  );
+  const letterVariants = {
+    hidden: { y: "150%", opacity: 0 },
+    visible: (i) => ({
+      y: "0%",
+      opacity: 1,
+      transition: {
+        delay: i * 0.05,
+        duration: 2.5,
+        ease: [0.87, 0.13, 0, 1],
+      },
+    }),
+  };
 
   return (
     <section className={styles.intro} ref={ref}>
@@ -38,7 +32,11 @@ const Intro = () => {
             {firstWord.map((letter, index) => (
               <motion.h1
                 key={index}
-                style={{ display: "inline-block", y: yMotionsFirst[index] }}
+                custom={index}
+                variants={letterVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                style={{ display: "inline-block" }}
               >
                 {letter}
               </motion.h1>
@@ -49,7 +47,11 @@ const Intro = () => {
             {secondWord.map((letter, index) => (
               <motion.h1
                 key={index}
-                style={{ display: "inline-block", y: yMotionsSecond[index] }}
+                custom={index}
+                variants={letterVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                style={{ display: "inline-block" }}
               >
                 {letter}
               </motion.h1>

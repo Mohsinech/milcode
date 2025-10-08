@@ -7,7 +7,7 @@ const useLenis = () => {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
-      wheelMultiplier: 0.3, 
+      wheelMultiplier: 0.1,
       touchMultiplier: 0.5,
       infinite: false,
     });
