@@ -29,8 +29,8 @@
 
 .introContent h1 {
   color: #f1f1f1;
-  font-family: "sans", sans-serif;
-  font-size: 15vw;
+  font-family: "mon", sans-serif;
+  font-size: 16.2vw;
   display: inline-block; /* required for letter animations */
   line-height: 1;
   text-transform: uppercase;
