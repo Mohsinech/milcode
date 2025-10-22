@@ -13,8 +13,8 @@ import useLenis from "@/hooks/useLenis";
 
 export default function Home() {
   // track scroll
-
   useLenis();
+
   return (
     <main className={styles.main}>
       <Hero />

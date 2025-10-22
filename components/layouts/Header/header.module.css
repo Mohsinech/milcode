@@ -74,3 +74,18 @@
   align-items: center;
   cursor: pointer;
 }
+
+/*  */
+.contactPage .logo,
+.contactPage .nav ul li {
+  color: #1f1f1f;
+}
+
+.contactPage .nav ul li .indicator:after {
+  background-color: #1f1f1f;
+}
+
+.contactPage .wrapper {
+  background-color: #1f1f1f;
+  color: #c0ff0d;
+}

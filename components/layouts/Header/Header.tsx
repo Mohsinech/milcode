@@ -28,7 +28,9 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
-      className={styles.header}
+      className={`${styles.header} ${
+        pathname === "/contact" ? styles.contactPage : ""
+      }`}
       style={{ padding: paddingY, y: transformY }}
     >
       <div className={styles.brand}>
@@ -43,7 +45,7 @@ const Header = () => {
           {navItems.map((item) => (
             <li
               key={item.href}
-              className={pathname === item.href ? styles.active : ""}
+              className={` ${pathname === item.href ? styles.active : ""}`}
             >
               <TransitionLink label={item.label} href={item.href} />
               <div className={styles.indicator}></div>
@@ -64,7 +66,7 @@ const Header = () => {
             label="Get a quote"
             href="/contact"
             style={{
-              color: "#000",
+              color: pathname === "/contact" ? "#c0ff0d" : "#171717",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

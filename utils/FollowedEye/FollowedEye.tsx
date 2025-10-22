@@ -2,12 +2,16 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./eye.module.css";
+import { usePathname } from "next/navigation";
 
 const EYE_RADIUS = 9;
 const DOT_RADIUS = 4;
 const MAX_MOVE = EYE_RADIUS - DOT_RADIUS;
 
 const FollowedEye = () => {
+  //
+  const pathname = usePathname();
+
   const eyeRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const [dotPositions, setDotPositions] = useState([
     { x: 0, y: 0 },
@@ -47,14 +51,22 @@ const FollowedEye = () => {
   return (
     <div className={styles.eyes}>
       {[0, 1].map((i) => (
-        <div className={styles.eye} key={i} ref={eyeRefs[i]}>
+        <div
+          className={pathname === "/contact" ? styles.eyeContact : styles.eye}
+          key={i}
+          ref={eyeRefs[i]}
+        >
           <div
-            className={styles.dot}
+            className={pathname === "/contact" ? styles.dotConatct : styles.dot}
             style={{
               transform: `translate(${dotPositions[i].x}px, ${dotPositions[i].y}px)`,
             }}
           />
-          <div className={styles.eyelid}></div>
+          <div
+            className={
+              pathname === "/contact" ? styles.eyelidContact : styles.eyelid
+            }
+          ></div>
         </div>
       ))}
     </div>
