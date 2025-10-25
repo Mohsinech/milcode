@@ -8,18 +8,17 @@ const Intro = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20% 0px" });
 
-  const firstWord = "Formed".split("");
+  const firstWord = "F✳rmed".split("");
   const secondWord = "Innovation".split("");
 
   const letterVariants = {
-    hidden: { y: "150%", opacity: 0, skewY: 30 },
+    hidden: { y: "150%", skewY: 30 },
     visible: (i: number) => ({
       y: "0%",
       skewY: 0,
-      opacity: 1,
       transition: {
         delay: i * 0.05,
-        duration: 2,
+        duration: 2.5,
         ease: [0.65, 0.05, 0, 1],
       },
     }),

@@ -15,25 +15,25 @@ html {
 /* Neue Montreal */
 @font-face {
   font-family: "mon";
-  src: url("../public/assets/fonts/montreal/NeueMontreal-Bold.woff2");
+  src: url("/assets/fonts/montreal/NeueMontreal-Bold.woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "mon";
-  src: url("../public/assets/fonts/montreal/NeueMontreal-Medium.woff2");
+  src: url("/assets/fonts/montreal/NeueMontreal-Medium.woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "mon";
-  src: url("../public/assets/fonts/montreal/NeueMontreal-Regular.woff2");
+  src: url("/assets/fonts/montreal/NeueMontreal-Regular.woff2");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "mon";
-  src: url("../public/assets/fonts/montreal/NeueMontreal-Light.woff2");
+  src: url("/assets/fonts/montreal/NeueMontreal-Light.woff2");
   font-weight: 200;
   font-style: normal;
 }
@@ -42,37 +42,37 @@ html {
 
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Black.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-Black.ttf");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Bold.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-Bold.ttf");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-SemiBold.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-SemiBold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Medium.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-Medium.ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Regular.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-Regular.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "grotesk";
-  src: url("../public/assets/fonts/tomato/TomatoGrotesk-Light.ttf");
+  src: url("/assets/fonts/tomato/TomatoGrotesk-Light.ttf");
   font-weight: 200;
   font-style: normal;
 }
@@ -80,33 +80,39 @@ html {
 /* General sans */
 @font-face {
   font-family: "sans";
-  src: url("../public/assets/fonts/general/GeneralSans-Bold.otf");
+  src: url("/assets/fonts/general/GeneralSans-Bold.otf");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "sans";
-  src: url("../public/assets/fonts/general/GeneralSans-Semibold.otf");
+  src: url("/assets/fonts/general/GeneralSans-Semibold.otf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "sans";
-  src: url("../public/assets/fonts/general/GeneralSans-Medium.otf");
+  src: url("/assets/fonts/general/GeneralSans-Medium.otf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "sans";
-  src: url("../public/assets/fonts/general/GeneralSans-Regular.otf");
+  src: url("/assets/fonts/general/GeneralSans-Regular.otf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "sans";
-  src: url("../public/assets/fonts/general/GeneralSans-Light.otf");
+  src: url("/assets/fonts/general/GeneralSans-Light.otf");
   font-weight: 200;
   font-style: normal;
+}
+
+/* Times Now */
+@font-face {
+  font-family: "times";
+  src: url("/assets/fonts/Times/TimesNow-SemiLight.woff2") format("woff2");
 }
 
 ::-webkit-scrollbar {

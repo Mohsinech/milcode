@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { motion } from "framer-motion";
 import { usePreloader } from "@/context/PreloaderContext";
-import { FormItem, SplitText } from "@/components/ui";
+import { SplitText } from "@/components/ui";
 import useLenis from "@/hooks/useLenis";
+import { FormItem } from "@/components";
 
 const getCurrentTime = () => {
   const now = new Date();

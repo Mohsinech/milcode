@@ -22,7 +22,7 @@ const Hero = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
               >
-                <Link href="/Templates">Template</Link>
+                <Link href="/templates">Templates</Link>
               </motion.div>
             </li>
             <li className="overflow-hidden">
@@ -75,7 +75,7 @@ const Hero = () => {
                   ease: [0.87, 0.13, 0, 1],
                 }}
               >
-                <Link href="Become-a-contributor">Become a Contributor</Link>
+                <Link href="Become-a-contributor">Schedule a call</Link>
               </motion.div>
             </li>
           </ul>

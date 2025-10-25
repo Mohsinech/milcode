@@ -1,0 +1,67 @@
+.gridServices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+}
+
+.card {
+  gap: 3rem;
+  padding: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:nth-child(odd) {
+  border-right: 1px solid #eaeaea;
+}
+
+.card:nth-child(1) {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card:nth-child(2) {
+  border-bottom: 1px solid #eaeaea;
+  padding: 2rem;
+}
+
+.card:nth-child(4) {
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header .imageWrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header h2 {
+  font-family: "mori", sans-serif;
+  font-size: 1.75rem;
+  color: #f1f1f1;
+}
+
+.card p {
+  font-family: "times", sans-serif;
+  font-size: 1.75rem;
+  width: 70%;
+  line-height: normal;
+  color: #d1d1d1;
+}
+
+.inlineIcon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.35em;
+  vertical-align: -0.15em;
+  opacity: 0.9;
+}

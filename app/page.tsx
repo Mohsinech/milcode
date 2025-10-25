@@ -7,8 +7,9 @@ import {
   Hero,
   Intro,
   Project,
+  Services,
+  ShortAbout,
 } from "@/components/HomeSections";
-import { Link } from "next-view-transitions";
 import useLenis from "@/hooks/useLenis";
 
 export default function Home() {
@@ -24,16 +25,9 @@ export default function Home() {
       {/* Featured Project */}
       <FeaturedProject />
       {/* Get more info */}
-      <section className={styles.briefAbout}>
-        <div className={styles.content}>
-          <h1>
-            Get more about{" "}
-            <span>
-              <Link href="/about">Milcode Studio</Link>
-            </span>
-          </h1>
-        </div>
-      </section>
+      <ShortAbout />
+      {/* Services */}
+      <Services />
     </main>
   );
 }
