@@ -1,139 +1,165 @@
 .hero {
-  height: 100dvh;
-  /* background: url("/assets/images/background.jpeg"); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-between;
-  gap: 8rem;
-  padding: 12rem 2rem;
-  position: relative;
-  overflow: hidden;
+  background-color: var(--ink);
+  color: var(--paper);
+  /* fixed header (28px + 44px + 28px) + design spacing */
+  padding: calc(100px + 72px) var(--gutter) 40px;
 }
 
-.silkBackground {
+/* Meta row */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line-dark);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label-dark);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+/* Headline */
+.title {
+  margin: 0;
+  padding-top: 48px;
+  font-size: clamp(64px, 12.4vw, 186px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Intro + actions */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 56px 0 64px;
+}
+
+.lead {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 300;
+  line-height: 1.35;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Featured reel (placeholder) */
+.reel {
+  position: relative;
+  display: block;
+  height: clamp(360px, 52vw, 760px);
+  background-color: #262626;
+  border: 1px dashed rgba(241, 241, 241, 0.22);
+  box-sizing: border-box;
+  color: inherit;
+}
+
+.reel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.reelTop {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reelPlaceholder {
   position: absolute;
   inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-}
-
-.hero > *:not(.silkBackground) {
-  position: relative;
-  z-index: 1;
-}
-
-.paths {
-  width: 40%;
-  height: 100%;
   display: flex;
-  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8c8c8c;
 }
 
-.pages ul li a,
-.socials ul li a {
-  color: #ccc;
-  font-family: "sans", sans-serif;
-}
-
-.flex_col {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Agency Data */
-.agencyData {
-  width: 100%;
-  height: 65vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.intro {
-  font-size: 3.8rem;
-  line-height: 1.1;
-  font-weight: 600;
-  color: #f1f1f1;
-  font-family: "mon", sans-serif;
-}
-
-.ctaBtn {
-  position: relative;
-  width: 100%;
-}
-
-.wrapper {
-  background-color: #f1f1f1;
-  width: fit-content;
-  padding: 0.6em 1.5rem;
-  border-radius: 0.2rem;
-
-  cursor: pointer;
-}
-
-.shortDescription {
-  width: 60%;
-}
-
-.wrapperContent {
-  color: #f1f1f1;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
-
-.wrapperContent p {
-  font-family: "sans", sans-serif;
-  font-size: 1rem;
-}
-
-.wrapperContent ul li {
-  position: relative;
-}
-
-.wrapperContent ul li .indicator {
-  position: relative;
-  width: 100%;
-  height: 1px;
-  margin-top: -0.3rem;
-}
-
-.wrapperContent ul li .indicator:after {
-  content: "";
+.reelBottom {
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  bottom: 2px;
-
-  background-color: #f1f1f1;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.wrapperContent ul li:hover .indicator:after,
-.wrapperContent ul li.active .indicator:after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* TransitionLink inherits type, so pin the Hero links to their original sizing */
-.ctaBtn a,
-.wrapperContent ul li a {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-.ctaBtn a span,
-.wrapperContent ul li a span {
+.reelName {
+  display: block;
+  font-size: clamp(36px, 4.6vw, 64px);
   line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.reelInfo {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #bdbdbd;
+}
+
+.reelCta {
+  padding: 13px 20px;
+  background-color: var(--accent);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform 0.6s var(--ease);
+}
+
+.reel:hover .reelCta {
+  transform: scale(0.95);
+}
+
+/* Header wraps to two rows on phones */
+@media (max-width: 720px) {
+  .hero {
+    padding-top: calc(160px + 40px);
+  }
 }

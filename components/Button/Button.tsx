@@ -11,11 +11,13 @@ interface ButtonProps {
   variant?: Variant;
   // the background the button sits on — flips solid/outline colors
   surface?: Surface;
-  arrow?: boolean;
+  // true = diagonal ↗, "down" = ↓ (in-page anchors)
+  arrow?: boolean | "down";
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const Arrow = () => (
+const Arrow = ({ down = false }: { down?: boolean }) => (
   <svg
     width="14"
     height="14"
@@ -25,7 +27,7 @@ const Arrow = () => (
     strokeWidth="1.6"
     aria-hidden="true"
   >
-    <path d="M2 12L12 2M4 2h8v8" />
+    <path d={down ? "M7 1v12M2 8l5 5 5-5" : "M2 12L12 2M4 2h8v8"} />
   </svg>
 );
 
@@ -36,6 +38,7 @@ const Button = ({
   surface = "light",
   arrow = false,
   className = "",
+  onClick,
 }: ButtonProps) => {
   const classes = [
     styles.button,
@@ -50,8 +53,9 @@ const Button = ({
       label={label}
       className={classes}
       style={{ display: "inline-flex" }}
+      onClick={onClick}
     >
-      {arrow && <Arrow />}
+      {arrow && <Arrow down={arrow === "down"} />}
     </TransitionLink>
   );
 };

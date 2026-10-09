@@ -1,15 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./service.module.css";
 import servicesData from "./data";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import AccordionPanel from "@/components/Accordion/AccordionPanel";
 
-const LOTTIE_SPEED = 0.4;
+const InfinityIcon = () => (
+  <svg
+    className={styles.icon}
+    width="44"
+    height="22"
+    viewBox="0 0 44 22"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    aria-hidden="true"
+  >
+    <path d="M22 11c-4-5-7-8-11-8a8 8 0 0 0 0 16c4 0 7-3 11-8s7-8 11-8a8 8 0 0 1 0 16c-4 0-7-3-11-8z" />
+  </svg>
+);
 
 const ServicesGrid = () => {
-  const [openServiceId, setOpenServiceId] = useState<number | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
+  const [openServiceId, setOpenServiceId] = useState<number | null>(
+    servicesData[0].id,
+  );
 
   const toggleService = (serviceId: number) => {
     setOpenServiceId((currentId) =>
@@ -18,81 +35,64 @@ const ServicesGrid = () => {
   };
 
   return (
-    <div className={styles.gridServices}>
-      {servicesData.map((service) => (
-        <div className={styles.accordion} key={service.id}>
-          <button
-            type="button"
-            className={styles.headerButton}
-            onClick={() => toggleService(service.id)}
-            aria-expanded={openServiceId === service.id}
-            aria-controls={`service-options-${service.id}`}
-          >
-            <div className={styles.header}>
-              {service.lottieIcon && (
-                <DotLottieReact
-                  src={service.lottieIcon}
-                  loop
-                  autoplay
-                  className={styles.lottie}
-                  speed={LOTTIE_SPEED}
-                />
-              )}
-              <h2>{service.title}</h2>
-            </div>
-          </button>
+    <div
+      ref={ref}
+      className={`${styles.gridServices} ${inView ? styles.visible : ""}`}
+    >
+      {servicesData.map((service, i) => {
+        const open = openServiceId === service.id;
+        const buttonId = `service-button-${service.id}`;
+        const panelId = `service-options-${service.id}`;
 
-          <AnimatePresence initial={false}>
-            {openServiceId === service.id && (
-              <motion.div
-                id={`service-options-${service.id}`}
-                className={styles.options}
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 1, ease: [0.65, 0.05, 0, 1] }}
+        return (
+          <div
+            className={`${styles.accordion} ${open ? styles.open : ""}`}
+            key={service.id}
+            style={{ "--i": i } as React.CSSProperties}
+          >
+            <h3 className={styles.heading}>
+              <button
+                type="button"
+                id={buttonId}
+                className={styles.headerButton}
+                onClick={() => toggleService(service.id)}
+                aria-expanded={open}
+                aria-controls={panelId}
               >
-                {service.Options.map((op, i) => (
-                  <div className={styles.opHidden} key={op}>
-                    <div className="overflow-hidden">
-                      <motion.h2
-                        initial={{ y: "200%", opacity: 0 }}
-                        animate={{ y: "0%", opacity: 1 }}
-                        exit={{ y: "200%", opacity: 0 }}
-                        transition={{
-                          duration: 1.5,
-                          ease: [0.65, 0.05, 0, 1],
-                          delay: i * 0.1,
-                        }}
-                        className={styles.op}
-                      >
-                        {op}
-                      </motion.h2>
-                      <motion.div
-                        initial={{
-                          width: "0%",
-                        }}
-                        animate={{
-                          width: "100%",
-                        }}
-                        exit={{
-                          width: "0%",
-                        }}
-                        transition={{
-                          duration: 1.8,
-                          ease: [0.65, 0.05, 0, 1],
-                          delay: i * 0.1,
-                        }}
-                        className={styles.line}
-                      ></motion.div>
-                    </div>
-                  </div>
+                <span className={styles.index}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <InfinityIcon />
+                <span className={styles.title}>{service.title}</span>
+                <span className={styles.toggle} aria-hidden="true" />
+              </button>
+            </h3>
+
+            <AccordionPanel
+              id={panelId}
+              labelledBy={buttonId}
+              open={open}
+              className={styles.options}
+            >
+              <p className={styles.description}>{service.description}</p>
+              <ul className={styles.list}>
+                {service.options.map((op, j) => (
+                  <li
+                    className={styles.opHidden}
+                    key={op}
+                    style={{ "--j": j } as React.CSSProperties}
+                  >
+                    <span className={styles.mask}>
+                      <span className={styles.op}>{op}</span>
+                    </span>
+                    <span className={styles.line} aria-hidden="true" />
+                  </li>
                 ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
+              </ul>
+            </AccordionPanel>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -14,6 +14,8 @@ interface TransitionLinkProps {
   style?: React.CSSProperties;
   className?: string;
   children?: React.ReactNode;
+  // call e.preventDefault() to skip navigation (e.g. Lenis anchor scroll)
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 // external, mailto: and tel: links stay plain <a>
@@ -26,6 +28,7 @@ const TransitionLink: React.FC<TransitionLinkProps> = ({
   style,
   className,
   children,
+  onClick,
 }) => {
   const [hovered, setHovered] = useState(false);
   const letters = label.split("");
@@ -104,6 +107,7 @@ const TransitionLink: React.FC<TransitionLinkProps> = ({
     style: { display: "inline-block", ...style },
     onMouseEnter: () => setHovered(true),
     onMouseLeave: () => setHovered(false),
+    onClick,
   };
 
   if (isInternal(href)) {

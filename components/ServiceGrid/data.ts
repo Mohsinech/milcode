@@ -1,60 +1,47 @@
 interface Service {
   id: number;
-  lottieIcon: string;
   title: string;
-  Options: string[];
+  description: string;
+  options: string[];
 }
 
 export const servicesData: Service[] = [
   {
     id: 1,
-    lottieIcon:
-      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
-    title: "Strategy",
-    Options: [
-      "Digital Strategy",
-      "Content Strategy",
-      "Brand Positioning",
-      "Discoverability",
-    ],
+    title: "Website design",
+    description:
+      "Art direction, layout and motion that feel like your place — not a template. Designed in Figma and reviewed with you on real phones.",
+    options: ["Art direction", "UI / UX", "Motion", "Photo direction"],
   },
   {
     id: 2,
-    lottieIcon:
-      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
-    title: "Design",
-    Options: [
-      "Branding",
-      "UX/UI Design",
-      "Web design",
-      "motion design",
-      "Content Creation",
-      "Interactive developement",
-    ],
+    title: "Development",
+    description:
+      "Fast sites built with Next.js, set up with hosting, domain and analytics — and simple enough for your team to update.",
+    options: ["Next.js", "Headless CMS", "Hosting & domain", "Analytics"],
   },
   {
     id: 3,
-    lottieIcon:
-      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
-    title: "Technology",
-    Options: [
-      "Front-end Development",
-      "Back-end Development",
-      "E-commerce Solutions",
-      "CMS Integration",
-      "Mobile App Development",
+    title: "Menus & reservations",
+    description:
+      "Menus you can edit in minutes, in every language your guests speak — connected to your booking tool, WhatsApp or phone.",
+    options: [
+      "Digital menu",
+      "Multilingual menus",
+      "QR codes",
+      "Booking integration",
     ],
   },
   {
     id: 4,
-    lottieIcon:
-      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
-    title: "Performance",
-    Options: [
-      "Online Optimization (SEO)",
-      "Convertion Rate Optimization (CRO)",
-      "Data Analysis",
-      "Social Compaigns",
+    title: "Visibility",
+    description:
+      "Google Business Profile, local SEO and a proper link in bio — so hungry people nearby actually find you.",
+    options: [
+      "Local SEO",
+      "Google Business Profile",
+      "Google Maps",
+      "Core Web Vitals",
     ],
   },
 ];

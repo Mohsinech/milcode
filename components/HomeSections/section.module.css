@@ -1,0 +1,66 @@
+/* Shared layout for home sections: label column on the left, heading on the right */
+.section {
+  padding: var(--section-pad) var(--gutter);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 72px;
+}
+
+.labelCol {
+  flex: 1 1 220px;
+}
+
+.mainCol {
+  flex: 999 1 640px;
+  min-width: 0;
+}
+
+.title {
+  flex: 999 1 640px;
+  min-width: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+/* Times italic emphasis */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.muted {
+  color: var(--text-label-dark);
+}
+
+/* Underlined text link with optional arrow
+   (!important beats TransitionLink's inline display) */
+.textLink {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--touch);
+  padding-bottom: 4px;
+  box-sizing: border-box;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Grey image / video placeholder */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}

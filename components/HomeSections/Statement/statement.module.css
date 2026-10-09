@@ -1,0 +1,42 @@
+.statement {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.text {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.8vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.fact {
+  flex: 1 1 220px;
+}
+
+.factLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.fact a {
+  color: var(--ink);
+}

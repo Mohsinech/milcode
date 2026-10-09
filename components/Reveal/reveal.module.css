@@ -1,0 +1,12 @@
+/* Mask with a little room so descenders and italics aren't clipped */
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.line {
+  display: block;
+  will-change: transform;
+}

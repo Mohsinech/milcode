@@ -1,49 +1,35 @@
-"use client";
-
 import React from "react";
 import styles from "./app.module.css";
 import {
-  FeaturedProject,
   Hero,
-  Intro,
-  Project,
-  ProjectGrid,
-  PrSection,
+  Ticker,
+  Statement,
+  SelectedWork,
   Services,
-  ShortAbout,
+  Process,
+  Packages,
+  Faq,
+  ContactCta,
 } from "@/components/HomeSections";
-import GradualBlur from "@/components/GradualBlur";
+
+export const metadata = {
+  title: "Milcode Studio — Websites for restaurants",
+  description:
+    "An independent studio in Casablanca designing and building websites for restaurants, cafés and hotels — with online menus, reservations and local SEO.",
+};
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Hero />
-      {/* Project */}
-      <Project />²
-      <Intro />
-      {/* Featured Project */}
-      <FeaturedProject />
-      {/* Get more info */}
-      <ShortAbout />
-      {/* Services */}
+      <Ticker />
+      <Statement />
+      <SelectedWork />
       <Services />
-      {/* Project */}
-      <PrSection />
-      <ProjectGrid />
-      <section
-        style={{ position: "relative", height: "auto", overflow: "hidden" }}
-      >
-        <GradualBlur
-          target="page"
-          position="bottom"
-          height="10rem"
-          strength={1}
-          divCount={3}
-          curve="bezier"
-          exponential
-          opacity={1}
-        />
-      </section>
+      <Process />
+      <Packages />
+      <Faq />
+      <ContactCta />
     </main>
   );
 }

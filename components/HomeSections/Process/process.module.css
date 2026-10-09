@@ -1,0 +1,62 @@
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  display: flex;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  min-height: 340px;
+  padding: 32px 28px 36px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  color: var(--ink);
+}
+
+.stepTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.duration {
+  color: var(--text-label);
+}
+
+.stepTitle {
+  margin: 0 0 14px;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.stepText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+/* "Refill" card */
+.dark {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.dark .duration {
+  color: var(--accent);
+}
+
+.dark .stepText {
+  color: var(--text-body-dark);
+}

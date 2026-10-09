@@ -1,81 +1,235 @@
+/* Only transform and opacity animate here; the panel height is handled
+   by AccordionPanel (grid-template-rows 0fr → 1fr). */
+
 .gridServices {
   display: grid;
-  grid-template-columns: repeat(1, minmax(250px, 1fr));
-  /* gap: 1rem; */
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
+  border-top: 1px solid rgba(241, 241, 241, 0.25);
+  color: var(--paper);
 }
 
+/* Reveal once in view: light fade + rise, staggered per item */
 .accordion {
-  /* padding: 1rem; */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(241, 241, 241, 0.25);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease),
+    transform 0.9s var(--ease);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.visible .accordion {
+  opacity: 1;
+  transform: none;
+}
+
+/* Header */
+.heading {
+  margin: 0;
+  font: inherit;
 }
 
 .headerButton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   width: 100%;
+  min-height: var(--touch);
+  padding: 32px 0;
   border: 0;
   background: transparent;
-  padding: 0;
+  color: inherit;
+  font: inherit;
   text-align: left;
   cursor: pointer;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  /* gap: 1rem; */
+.headerButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
-.header h2 {
-  font-family: "mon", sans-serif;
-  text-transform: uppercase;
-  font-size: 1.9rem;
-  letter-spacing: -0.035rem;
-  color: #f1f1f1;
+.index {
+  flex: 0 0 60px;
+  font-size: 15px;
+  color: var(--text-label-dark);
 }
 
-.lottie {
-  width: 10rem;
-  height: auto;
+.icon {
+  flex-shrink: 0;
+  color: var(--accent);
+  animation: spin 5s cubic-bezier(0.65, 0.05, 0, 1) infinite;
 }
 
-/*  */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+/* Plus that turns into a minus */
+.toggle {
+  position: relative;
+  flex: 0 0 18px;
+  height: 18px;
+}
+
+.toggle::before,
+.toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background-color: currentColor;
+  transition: transform 0.6s var(--ease);
+}
+
+.toggle::after {
+  transform: rotate(90deg);
+}
+
+.open .toggle::after {
+  transform: rotate(0deg);
+}
+
+/* Panel content */
 .options {
   display: flex;
-  flex-direction: column;
-  /* padding: 1rem;/ */
-  /* padding-top: 1rem; */
-  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 32px 40px;
+  padding: 0 0 40px 80px;
+}
+
+.description {
+  flex: 1 1 360px;
+  max-width: 560px;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--text-body-dark);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s var(--ease),
+    transform 0.6s var(--ease);
+}
+
+.list {
+  flex: 1 1 280px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .opHidden {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-top: 1rem;
+}
+
+.mask {
+  display: block;
   overflow: hidden;
+  padding: 14px 0;
 }
 
-.opHidden h2 {
-  font-family: "mon", sans-serif;
+.op {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  padding-left: 1rem;
-  color: #fff;
-  line-height: normal;
+  color: var(--paper);
+  transform: translateY(200%);
+  opacity: 0;
+  transition:
+    transform 0.6s var(--ease),
+    opacity 0.6s var(--ease);
 }
 
-.opHidden .line {
-  width: 100%;
+.line {
+  display: block;
   height: 1px;
-  background-color: #f1f1f1;
-  margin: 1.5rem 0;
+  background-color: rgba(241, 241, 241, 0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
 }
 
 .opHidden:last-child .line {
   display: none;
 }
 
-.opHidden:last-chilagd h2 {
-  padding-bottom: 2rem;
+/* Open: content rises in after the panel starts expanding */
+.open .description {
+  opacity: 1;
+  transform: none;
+  transition-duration: 1.2s;
+  transition-delay: 0.2s;
+}
+
+.open .op {
+  transform: none;
+  opacity: 1;
+  transition-duration: 1.4s;
+  transition-delay: calc(0.2s + var(--j, 0) * 0.1s);
+}
+
+.open .line {
+  transform: scaleX(1);
+  transition-duration: 1.6s;
+  transition-delay: calc(0.2s + var(--j, 0) * 0.1s);
+}
+
+@media (max-width: 720px) {
+  .headerButton {
+    gap: 14px;
+    padding: 24px 0;
+  }
+
+  .index {
+    flex-basis: auto;
+  }
+
+  .icon {
+    width: 32px;
+  }
+
+  .options {
+    padding-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion,
+  .description,
+  .op,
+  .line,
+  .toggle::before,
+  .toggle::after {
+    transition: none;
+  }
+
+  .accordion {
+    opacity: 1;
+    transform: none;
+  }
+
+  .icon {
+    animation: none;
+  }
 }

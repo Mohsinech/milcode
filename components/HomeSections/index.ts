@@ -1,20 +1,21 @@
 import Hero from "./Hero/Hero";
-import Intro from "./Intro/Intro";
-import FeaturedProject from "./FeaturedProject/FeaturedProject";
-import ShortAbout from "./ShortAbout/ShortAbout";
-import Project from "./Project/Project";
+import Ticker from "./Ticker/Ticker";
+import Statement from "./Statement/Statement";
+import SelectedWork from "./SelectedWork/SelectedWork";
 import Services from "./Services/Services";
-//
-import PrSection from "./ProjectsSection/PrSection";
-import ProjectGrid from "./ProjectGrid/ProjectGrid";
+import Process from "./Process/Process";
+import Packages from "./Packages/Packages";
+import Faq from "./Faq/Faq";
+import ContactCta from "./ContactCta/ContactCta";
 
 export {
   Hero,
-  Intro,
-  FeaturedProject,
-  ShortAbout,
-  Project,
+  Ticker,
+  Statement,
+  SelectedWork,
   Services,
-  PrSection,
-  ProjectGrid,
+  Process,
+  Packages,
+  Faq,
+  ContactCta,
 };

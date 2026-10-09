@@ -1,70 +1,30 @@
 .services {
-  display: flex;
-  padding: 5rem 2rem;
-  gap: 4rem;
+  background-color: var(--ink);
+  color: var(--paper);
+  scroll-margin-top: 100px;
 }
 
-/*  */
-.content {
+.footer {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 40px;
 }
 
-.content h1 {
-  color: #f1f1f1;
-  font-family: "mon", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  line-height: 1.7;
-  width: 80%;
-  display: inline-block;
-  letter-spacing: 0.025rem;
+.featured {
+  font-size: 15px;
+  color: var(--text-label-dark);
 }
 
-.span {
-  padding-left: 2rem;
+.featuredLink {
+  color: var(--paper);
+  border-bottom: 1px solid var(--paper);
 }
 
-.content sup {
-  font-size: 0.75rem;
-  color: #c0ff0d;
-  text-transform: uppercase;
-  font-family: "grotesk", sans-serif;
-  margin-right: 3rem;
-  vertical-align: text-top;
-  position: relative;
-}
-
-.content sup::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #c0ff0d;
-  left: 0;
-  bottom: -1px;
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: transform 0.8s cubic-bezier(0.65, 0.05, 0, 1);
-  cursor: pointer;
-}
-
-.content sup:hover::after {
-  transform: scaleX(0);
-  transform-origin: right;
-}
-
-/*  */
-.rotatingLines {
-  width: 1.3rem;
-  height: 1.3rem;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.rotatingIconWhite {
-  filter: brightness(0) saturate(100%) invert(1);
-  background: transparent;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }

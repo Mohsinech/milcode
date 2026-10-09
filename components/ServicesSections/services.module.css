@@ -1,0 +1,440 @@
+/* ---------- Hero (dark) ---------- */
+.hero {
+  background-color: var(--ink);
+  color: var(--paper);
+  /* fixed header (28px + 44px + 28px) + design spacing */
+  padding: calc(100px + 72px) var(--gutter) clamp(80px, 9vw, 128px);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line-dark);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label-dark);
+}
+
+.heroTitle {
+  margin: 0;
+  padding-top: 40px;
+  font-size: clamp(72px, 15vw, 228px);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: -0.065em;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.heroBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.lead {
+  max-width: 560px;
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* !important beats TransitionLink's inline display */
+.pill {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: var(--touch);
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(241, 241, 241, 0.4);
+  border-radius: 999px;
+  font-size: 15px;
+  transition: border-color 0.4s var(--ease);
+}
+
+.pill:hover {
+  border-color: var(--paper);
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Service blocks ---------- */
+.service {
+  padding: var(--section-pad) var(--gutter);
+}
+
+.bordered {
+  border-bottom: 1px solid var(--line);
+}
+
+.dark {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.num {
+  font-size: 15px;
+  color: var(--text-label);
+}
+
+.dark .num {
+  color: var(--text-label-dark);
+}
+
+.serviceTitle {
+  margin: 0;
+  font-size: clamp(48px, 6.4vw, 96px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+/* Times italic, keeping the heading's tracking */
+.italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.body {
+  max-width: 720px;
+  margin: 32px 0 0;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.dark .body {
+  color: var(--text-body-dark);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.fact {
+  flex: 1 1 260px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
+
+.factLabel {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.factText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Featured project card */
+.featured {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 72px;
+  color: inherit;
+}
+
+.featured:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.featuredMedia {
+  flex: 2 1 560px;
+  min-width: 0;
+  height: clamp(300px, 34vw, 500px);
+  background-color: #dadada;
+  color: var(--text-label);
+}
+
+.featuredInfo {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.featuredInfo .factLabel {
+  margin-bottom: 0;
+}
+
+.featuredName {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  transition: opacity 0.4s var(--ease);
+}
+
+.featured:hover .featuredName {
+  opacity: 0.72;
+}
+
+/* Development stack */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(241, 241, 241, 0.25);
+}
+
+.stackItem {
+  padding: 28px 24px 28px 0;
+  border-bottom: 1px solid rgba(241, 241, 241, 0.25);
+}
+
+.stackName {
+  display: block;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+
+.stackNote {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--text-label-dark);
+}
+
+/* Menus & bookings */
+.menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.menusText {
+  flex: 1 1 360px;
+  min-width: 0;
+}
+
+.menusText .body {
+  max-width: none;
+}
+
+.menuList {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
+
+.phone {
+  flex: 0 1 300px;
+  height: 560px;
+  background-color: var(--accent);
+  color: var(--ink);
+}
+
+/* Visibility cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 200px;
+  padding: 28px;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+.card .factLabel {
+  margin-bottom: 24px;
+}
+
+.cardText {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Add-ons + Compare ---------- */
+.blockHead {
+  margin-bottom: 48px;
+}
+
+/* Plain (unnumbered) label from the design */
+.plainLabel {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.grey {
+  color: var(--text-label);
+}
+
+.addOns {
+  padding: clamp(80px, 9vw, 128px) var(--gutter);
+  background-color: var(--accent);
+  color: var(--ink);
+}
+
+.addOnList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.addOn {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.3);
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: -0.03em;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.tableWrap:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 17px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--ink);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.table th,
+.table td {
+  padding: 18px 16px 18px 0;
+  font-weight: 400;
+  text-align: left;
+  vertical-align: top;
+}
+
+.colLabel {
+  width: 40%;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.colPlan {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Ask the chef CTA ---------- */
+.ask {
+  display: block;
+  padding: clamp(80px, 9vw, 128px) var(--gutter);
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.ask:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -6px;
+}
+
+.askTop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label-dark);
+}
+
+.askTitle {
+  font-size: clamp(64px, 11vw, 168px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.askTitle .accent {
+  transition: opacity 0.4s var(--ease);
+}
+
+.ask:hover .askTitle .accent {
+  opacity: 0.72;
+}
+
+/* Header wraps to two rows on phones */
+@media (max-width: 720px) {
+  .hero {
+    padding-top: calc(160px + 40px);
+  }
+
+  .phone {
+    flex-basis: 100%;
+    height: 480px;
+  }
+}
