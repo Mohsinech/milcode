@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.innerCard {
+  width: 100%;
+  height: 90dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.innerCard img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+.innerCard:hover img {
+  transform: scale(1.05);
+}

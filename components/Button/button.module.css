@@ -1,0 +1,72 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--touch);
+  padding: 13px 20px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease),
+    border-color 0.4s var(--ease);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.button svg {
+  flex-shrink: 0;
+  transition: transform 0.6s var(--ease);
+}
+
+.button:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Solid — ink on light surfaces, paper on dark */
+.solid {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.solid.onDark {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* Outline */
+.outline {
+  background-color: transparent;
+  color: var(--ink);
+  border-color: rgba(23, 23, 23, 0.4);
+}
+
+.outline:hover {
+  border-color: var(--ink);
+}
+
+.outline.onDark {
+  color: var(--paper);
+  border-color: rgba(241, 241, 241, 0.4);
+}
+
+.outline.onDark:hover {
+  border-color: var(--paper);
+}
+
+/* Accent — lime with ink text on any surface */
+.accent {
+  background-color: var(--accent);
+  color: var(--ink);
+}

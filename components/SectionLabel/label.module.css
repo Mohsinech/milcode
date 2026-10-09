@@ -1,0 +1,13 @@
+.label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.onDark {
+  color: var(--text-label-dark);
+}

@@ -3,206 +3,143 @@
 import React from "react";
 import styles from "./hero.module.css";
 import { Link } from "next-view-transitions";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 import { TransitionLink } from "@/utils";
+import Silk from "@/components/Silk";
 
 const description = [
   "Milcode Studio is a design & development agency. Creating web solutions that strengthen your online presence.  We help brands, creators, and companies stand out online.",
 ];
 
+const pageLinks = [
+  { href: "/templates", label: "Templates" },
+  { href: "Affiliate", label: "Affiliate" },
+  { href: "Case Study", label: "Case Study" },
+  { href: "Mico Academy", label: "Mico Academy" },
+  { href: "Become-a-contributor", label: "Schedule a call" },
+];
+
+const socialLinks = [
+  { href: "/instagram", label: "Instagram" },
+  { href: "/twitter", label: "Twitter (x)" },
+  { href: "/linkedin", label: "LinkedIn" },
+  { href: "/behance", label: "Behance" },
+  { href: "/dribbble", label: "Dribbble" },
+];
+
+const headlineLines = [
+  "Independent design &",
+  "technology agency.",
+  "Ma • Casablanca.",
+];
+
+const SEQUENCE_EASE = [0.87, 0.13, 0, 1] as const;
+
 const Hero = () => {
+  const shouldReduceMotion = useReducedMotion();
+
+  const sequenceItem: Variants = {
+    hidden: {
+      y: shouldReduceMotion ? 0 : 90,
+      opacity: shouldReduceMotion ? 1 : 0,
+    },
+    show: (index: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.9,
+        delay: 0.08 * index,
+        ease: SEQUENCE_EASE,
+      },
+    }),
+  };
+
+  const fadeInStage: Variants = {
+    hidden: {
+      opacity: shouldReduceMotion ? 1 : 0,
+      y: shouldReduceMotion ? 0 : 25,
+    },
+    show: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: 0.1 + 0.09 * index,
+        ease: SEQUENCE_EASE,
+      },
+    }),
+  };
+
   return (
     <section className={styles.hero}>
+      <div className={styles.silkBackground} aria-hidden="true">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#B6B6B6"
+          noiseIntensity={2}
+          rotation={0}
+        />
+      </div>
+
       <div className={styles.paths}>
         <div className={styles.pages}>
           <ul>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
-              >
-                <Link href="/templates">Templates</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.1,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="Affiliate">Affiliate</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="Case Study">Case Study</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.3,
-
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="Mico Academy">Mico Academy</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.4,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="Become-a-contributor">Schedule a call</Link>
-              </motion.div>
-            </li>
+            {pageLinks.map((item, index) => (
+              <li className="overflow-hidden" key={item.label}>
+                <motion.div
+                  initial="hidden"
+                  animate="show"
+                  variants={sequenceItem}
+                  custom={index + 2}
+                >
+                  <Link href={item.href}>{item.label}</Link>
+                </motion.div>
+              </li>
+            ))}
           </ul>
         </div>
         <div className={styles.socials}>
           <ul>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.1,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="/instagram">Instagram</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="/twitter">Twitter (x)</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.3,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="/linkedin">LinkedIn</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.4,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="/behance">Behance</Link>
-              </motion.div>
-            </li>
-            <li className="overflow-hidden">
-              <motion.div
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.5,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                <Link href="/dribbble">Dribbble</Link>
-              </motion.div>
-            </li>
+            {socialLinks.map((item, index) => (
+              <li className="overflow-hidden" key={item.label}>
+                <motion.div
+                  initial="hidden"
+                  animate="show"
+                  variants={sequenceItem}
+                  custom={index + 4}
+                >
+                  <Link href={item.href}>{item.label}</Link>
+                </motion.div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
-      {/* Agency Data */}
       <div className={styles.agencyData}>
         <div className={styles.flex_col}>
-          {/* Intro */}
           <div className={styles.intro}>
-            <div className="relative overflow-hidden">
-              <motion.h1
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.1,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                Independent design &
-              </motion.h1>
-            </div>
-            <div className="relative overflow-hidden">
-              <motion.h1
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                technology agency.
-              </motion.h1>
-            </div>{" "}
-            <div className="relative overflow-hidden">
-              <motion.h1
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.87, 0.13, 0, 1],
-                }}
-              >
-                Ma • Casablanca.{" "}
-              </motion.h1>
-            </div>
+            {headlineLines.map((line, index) => (
+              <div className="relative overflow-hidden" key={line}>
+                <motion.h1
+                  initial="hidden"
+                  animate="show"
+                  variants={sequenceItem}
+                  custom={index + 7}
+                >
+                  {line}
+                </motion.h1>
+              </div>
+            ))}
           </div>
 
-          {/* CTA  */}
           <motion.div
-            initial={{ scale: 1, opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial="hidden"
+            animate="show"
+            variants={fadeInStage}
+            custom={11}
             whileHover={{ scale: 0.9 }}
-            transition={{ duration: 1.5, ease: [0.87, 0.13, 0, 1] }}
             className={styles.wrapper}
           >
             <div className={styles.ctaBtn}>
@@ -220,9 +157,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Wrapper */}
         <div className={styles.wrapperContent}>
-          {/* Agency SShort Description */}
           <div className={styles.shortDescription}>
             {description[0]
               .split(". ")
@@ -230,13 +165,10 @@ const Hero = () => {
               .map((line, index) => (
                 <div className="overflow-hidden" key={index}>
                   <motion.p
-                    initial={{ y: 100 }}
-                    animate={{ y: 0 }}
-                    transition={{
-                      duration: 1,
-                      delay: 0.1,
-                      ease: [0.87, 0.13, 0, 1],
-                    }}
+                    initial="hidden"
+                    animate="show"
+                    variants={sequenceItem}
+                    custom={index + 12}
                   >
                     {line.trim()}
                   </motion.p>
@@ -246,9 +178,10 @@ const Hero = () => {
 
           <ul>
             <motion.li
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, ease: [0.87, 0.13, 0, 1] }}
+              initial="hidden"
+              animate="show"
+              variants={fadeInStage}
+              custom={13}
             >
               <TransitionLink
                 label="info@milcode.com"

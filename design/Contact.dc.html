@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Milcode Studio — Contact</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Mon";src:url("/_blob/d2c3e3091eb4cd5e73bd9d68ce401cb5") format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Mon";src:url("/_blob/1ecc5e2aa3ea450d5e1f7a68f0ca9b86") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Mon";src:url("/_blob/7a6dd03ba54ded4db430b945a5c9e22c") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Times Now";src:url("/_blob/ca9381c3583df8bfc59991427b66edb2") format("woff2");font-weight:400;font-display:swap}
+body{margin:0;background:#C0FF0D}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.72}
+input::placeholder,textarea::placeholder{color:#4A5A10}
+</style>
+</helmet>
+<div style="font-family: 'Mon', 'Helvetica Neue', Helvetica, sans-serif; color: #171717; background: #C0FF0D; width: 100%; overflow: hidden">
+
+<header style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 28px clamp(16px, 2.8vw, 40px)">
+  <a href="Main.dc.html" style="display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 500; letter-spacing: -0.02em">milcode
+    <svg width="38" height="20" viewBox="0 0 38 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"></circle><circle cx="6.5" cy="10" r="4" fill="currentColor"></circle><circle cx="28" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"></circle><circle cx="24.5" cy="10" r="4" fill="currentColor"></circle></svg>
+  </a>
+  <nav aria-label="Main" style="display: flex; gap: 28px; font-size: 15px; flex-wrap: wrap">
+    <a href="Work.dc.html">Work</a><a href="Services.dc.html">Services</a><a href="Studio.dc.html">Studio</a><a href="Contact.dc.html" style="border-bottom: 1px solid #171717">Contact</a>
+  </nav>
+  <span style="font-size: 14px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #171717"></span>Open now — Casablanca 16:08</span>
+</header>
+
+<section style="padding: 80px clamp(16px, 2.8vw, 40px) 64px">
+  <div style="font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px">( 04 ) Contact</div>
+  <h1 style="margin: 0; font-weight: 400; font-size: clamp(64px, 12vw, 184px); line-height: 0.86; letter-spacing: -0.06em">Let’s get<br>you <span style="font-family: 'Times Now', Georgia, serif; font-style: italic; letter-spacing: -0.03em">booked.</span></h1>
+</section>
+
+<section style="padding: 0 clamp(16px, 2.8vw, 40px) 120px; display: flex; gap: 64px; flex-wrap: wrap; border-top: 1px solid #171717; padding-top: 56px; margin: 0 clamp(16px, 2.8vw, 40px); padding-left: 0; padding-right: 0">
+  <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 40px">
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px">Email</div>
+      <a href="mailto:info@milcode.com" style="font-size: clamp(28px, 2.8vw, 40px); letter-spacing: -0.03em; border-bottom: 1px solid #171717">info@milcode.com</a>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px">Phone &amp; WhatsApp</div>
+      <a href="tel:+212713086047" style="font-size: 22px">+212 713 086 047</a>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px">Studio</div>
+      <div style="font-size: 22px; line-height: 1.35">Casablanca, Morocco<br>Working worldwide</div>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px">Follow</div>
+      <div style="font-size: 18px; line-height: 1.9"><a href="https://instagram.com/milcodestudio">Instagram</a><br><a href="#">LinkedIn</a><br><a href="#">Behance</a></div>
+    </div>
+  </div>
+
+  <form style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 40px" onSubmit="{{submit}}">
+    <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+      <div role="status" style="background: #171717; color: #F1F1F1; padding: 40px; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.03em; line-height: 1.1">Thanks — your table’s reserved.<br><span style="font-size: 17px; color: #D4D4D4; letter-spacing: 0">We reply within one working day.</span></div>
+    </sc-if>
+
+    <fieldset style="border: 0; margin: 0; padding: 0">
+      <legend style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 18px; padding: 0">What do you need?</legend>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <sc-for list="{{needs}}" as="n" hint-placeholder-count="5">
+          <button type="button" aria-pressed="{{n.pressed}}" onClick="{{n.toggle}}" style="{{n.style}}">{{n.label}}</button>
+        </sc-for>
+      </div>
+    </fieldset>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 32px">
+      <label style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">Full name *
+        <input required name="name" placeholder="Your name" style="font: inherit; font-size: 22px; text-transform: none; letter-spacing: 0; background: transparent; border: 0; border-bottom: 1px solid #171717; padding: 10px 0; color: #171717; outline-offset: 4px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">Email or WhatsApp *
+        <input required name="contact" placeholder="you@restaurant.com" style="font: inherit; font-size: 22px; text-transform: none; letter-spacing: 0; background: transparent; border: 0; border-bottom: 1px solid #171717; padding: 10px 0; color: #171717; outline-offset: 4px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">Restaurant name *
+        <input required name="restaurant" placeholder="Name &amp; city" style="font: inherit; font-size: 22px; text-transform: none; letter-spacing: 0; background: transparent; border: 0; border-bottom: 1px solid #171717; padding: 10px 0; color: #171717; outline-offset: 4px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">Current website / Instagram
+        <input name="link" placeholder="https://" style="font: inherit; font-size: 22px; text-transform: none; letter-spacing: 0; background: transparent; border: 0; border-bottom: 1px solid #171717; padding: 10px 0; color: #171717; outline-offset: 4px">
+      </label>
+    </div>
+
+    <fieldset style="border: 0; margin: 0; padding: 0">
+      <legend style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 18px; padding: 0">Budget</legend>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <sc-for list="{{budgets}}" as="b" hint-placeholder-count="4">
+          <button type="button" aria-pressed="{{b.pressed}}" onClick="{{b.pick}}" style="{{b.style}}">{{b.label}}</button>
+        </sc-for>
+      </div>
+    </fieldset>
+
+    <label style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em">Tell us about your place
+      <textarea name="message" rows="4" placeholder="Cuisine, number of covers, what isn’t working today, when you’d like to launch…" style="font: inherit; font-size: 20px; line-height: 1.4; text-transform: none; letter-spacing: 0; background: transparent; border: 0; border-bottom: 1px solid #171717; padding: 10px 0; color: #171717; resize: vertical; outline-offset: 4px"></textarea>
+    </label>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
+      <span style="font-size: 14px; max-width: 360px; line-height: 1.4">We reply within one working day. No spam, no newsletter.</span>
+      <button type="submit" style="font: inherit; background: #171717; color: #F1F1F1; border: 0; padding: 20px 32px; font-size: 18px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 14px; min-height: 44px">Send request
+        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+      </button>
+    </div>
+  </form>
+</section>
+
+<footer style="background: #171717; color: #F1F1F1; padding: 40px clamp(16px, 2.8vw, 40px); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 14px">
+  <span>© 2026 Milcode Studio — Casablanca</span>
+  <span style="display: flex; gap: 24px; flex-wrap: wrap"><a href="Terms.dc.html">Terms</a><a href="Privacy.dc.html">Privacy</a></span>
+  <a href="Main.dc.html">Back home</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { needs: ['New website'], budget: null, sent: false };
+  }
+  renderVals() {
+    const pill = 'font: inherit; font-size: 16px; padding: 12px 20px; min-height: 44px; border: 1px solid #171717; border-radius: 999px; cursor: pointer; ';
+    const on = 'background: #171717; color: #C0FF0D';
+    const off = 'background: transparent; color: #171717';
+    const needLabels = ['New website', 'Redesign', 'Online menu', 'Reservations', 'Local SEO', 'Monthly care'];
+    const budgetLabels = ['[< X MAD]', '[X–Y MAD]', '[Y+ MAD]', 'Not sure yet'];
+    return {
+      sent: this.state.sent,
+      needs: needLabels.map((label) => {
+        const active = this.state.needs.includes(label);
+        return {
+          label,
+          pressed: active ? 'true' : 'false',
+          style: pill + (active ? on : off),
+          toggle: () => this.setState({
+            needs: active ? this.state.needs.filter((x) => x !== label) : this.state.needs.concat(label),
+          }),
+        };
+      }),
+      budgets: budgetLabels.map((label) => {
+        const active = this.state.budget === label;
+        return {
+          label,
+          pressed: active ? 'true' : 'false',
+          style: pill + (active ? on : off),
+          pick: () => this.setState({ budget: label }),
+        };
+      }),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

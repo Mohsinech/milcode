@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Milcode Studio — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Mon";src:url("/_blob/d2c3e3091eb4cd5e73bd9d68ce401cb5") format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"Mon";src:url("/_blob/1ecc5e2aa3ea450d5e1f7a68f0ca9b86") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Mon";src:url("/_blob/7a6dd03ba54ded4db430b945a5c9e22c") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Times Now";src:url("/_blob/ca9381c3583df8bfc59991427b66edb2") format("woff2");font-weight:400;font-display:swap}
+body{margin:0;background:#171717}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.72}
+</style>
+</helmet>
+<div style="font-family: 'Mon', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; color: #171717; background: #F1F1F1; width: 100%; overflow: hidden">
+
+<!-- ============ HERO (ink) ============ -->
+<section style="background: #171717; color: #F1F1F1; padding: 0 clamp(16px, 2.8vw, 40px) 40px">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 28px 0">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 500; letter-spacing: -0.02em">
+      milcode
+      <svg width="38" height="20" viewBox="0 0 38 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"></circle><circle cx="6.5" cy="10" r="4" fill="currentColor"></circle><circle cx="28" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"></circle><circle cx="31.5" cy="10" r="4" fill="currentColor"></circle></svg>
+    </a>
+    <nav aria-label="Main" style="display: flex; gap: 28px; font-size: 15px; flex-wrap: wrap">
+      <a href="Work.dc.html">Work</a>
+      <a href="Services.dc.html">Services</a>
+      <a href="Studio.dc.html">Studio</a>
+      <a href="Contact.dc.html">Contact</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 20px; font-size: 14px">
+      <span style="color: #A3A3A3"><span style="color: #F1F1F1">EN</span> / FR</span>
+      <a href="Contact.dc.html" style="background: {{accent}}; color: #171717; padding: 13px 20px; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box">Start a project
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <div style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A3A3A3; padding: 72px 0 28px; border-bottom: 1px solid rgba(241,241,241,0.16)">
+    <span>( 00 ) Index</span>
+    <span>Restaurant websites — Design &amp; development</span>
+    <span style="display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}"></span>Open for new projects</span>
+    <span>Casablanca, MA — 16:08</span>
+  </div>
+
+  <h1 style="margin: 0; padding: 48px 0 0; font-weight: 400; font-size: clamp(64px, 12.4vw, 186px); line-height: 0.88; letter-spacing: -0.055em">
+    Websites that<br>fill <span style="font-family: 'Times Now', Georgia, serif; font-style: italic; letter-spacing: -0.03em">tables</span><span style="color: {{accent}}">.</span>
+  </h1>
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; padding: 56px 0 64px">
+    <p style="margin: 0; max-width: 520px; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.35; font-weight: 300">
+      Milcode is an independent studio from Casablanca. We design and build websites for restaurants, cafés and hotels — the kind that make people hungry, then help them book.
+    </p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <a href="#work" style="border: 1px solid rgba(241,241,241,0.4); padding: 14px 22px; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px">See the work
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 1v12M2 8l5 5 5-5"></path></svg>
+      </a>
+      <a href="Contact.dc.html" style="background: #F1F1F1; color: #171717; padding: 14px 22px; font-size: 15px; font-weight: 500; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Get a quote</a>
+    </div>
+  </div>
+
+  <!-- Featured reel -->
+  <a href="CaseStudy.dc.html" style="display: block; position: relative; height: clamp(360px, 52vw, 760px); background: #262626; border: 1px dashed rgba(241,241,241,0.22); box-sizing: border-box">
+    <div style="position: absolute; top: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase">
+      <span>Featured — M001</span>
+      <span>01 / 01</span>
+    </div>
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8C8C8C; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 24px">[ Monch website — screen recording, autoplay loop ]</div>
+    <div style="position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+      <div>
+        <div style="font-size: clamp(36px, 4.6vw, 64px); letter-spacing: -0.04em; line-height: 1">Monch</div>
+        <div style="font-size: 15px; color: #BDBDBD; margin-top: 8px">Restaurant website — Design, development, online menu</div>
+      </div>
+      <span style="background: {{accent}}; color: #171717; padding: 13px 20px; font-size: 15px; font-weight: 500">View case study</span>
+    </div>
+  </a>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div style="background: {{accent}}; color: #171717; padding: 20px clamp(16px, 2.8vw, 40px); display: flex; gap: 28px; align-items: center; white-space: nowrap; font-size: clamp(18px, 2vw, 26px); letter-spacing: -0.02em; overflow: hidden">
+  <span>Online menus</span>
+  <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"></path></svg>
+  <span>Reservations</span>
+  <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"></path></svg>
+  <span>Google &amp; local SEO</span>
+  <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"></path></svg>
+  <span>Multilingual menus</span>
+  <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"></path></svg>
+  <span>Fast on mobile</span>
+  <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"></path></svg>
+  <span>Instagram-ready</span>
+</div>
+
+<!-- ============ STUDIO STATEMENT ============ -->
+<section style="padding: clamp(96px, 11vw, 160px) clamp(16px, 2.8vw, 40px); display: flex; gap: 40px; flex-wrap: wrap">
+  <div style="flex: 1 1 220px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #5C5C5C">( 01 ) Studio</div>
+  <div style="flex: 999 1 640px; min-width: 0">
+    <p style="margin: 0; font-family: 'Times Now', Georgia, serif; font-size: clamp(32px, 3.8vw, 56px); line-height: 1.08; letter-spacing: -0.02em">
+      Good food deserves better than a PDF menu and a broken link in bio. We design websites with the care your kitchen puts on a plate — and build them to load fast on a phone, at 8pm, on a busy street.
+    </p>
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; margin-top: 64px; padding-top: 28px; border-top: 1px solid rgba(23,23,23,0.16); font-size: 16px; line-height: 1.45">
+      <div style="flex: 1 1 220px">
+        <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #5C5C5C; margin-bottom: 10px">Who we work with</div>
+        Restaurants, cafés, bakeries, rooftop bars and boutique hotels.
+      </div>
+      <div style="flex: 1 1 220px">
+        <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #5C5C5C; margin-bottom: 10px">Where</div>
+        Based in Casablanca, working with clients worldwide.
+      </div>
+      <div style="flex: 1 1 220px">
+        <a href="Studio.dc.html" style="display: inline-flex; align-items: center; gap: 10px; border-bottom: 1px solid #171717; padding-bottom: 4px; min-height: 44px; box-sizing: border-box">More about the studio
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELECTED WORK ============ -->
+<section id="work" style="padding: 0 clamp(16px, 2.8vw, 40px) clamp(96px, 11vw, 160px)">
+  <h2 style="margin: 0; font-weight: 400; font-size: clamp(64px, 13.4vw, 200px); line-height: 0.85; letter-spacing: -0.06em; display: flex; align-items: center; flex-wrap: wrap">
+    W<svg style="width: 0.62em; height: 0.62em; margin: 0 0.04em" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" aria-hidden="true"><path d="M50 6v88M6 50h88M19 19l62 62M81 19L19 81"></path></svg>rk
+  </h2>
+  <div style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin: 40px 0 32px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #5C5C5C">
+    <span>( 02 ) Selected work</span>
+    <span>Every project gets a number. Ours started at M001.</span>
+  </div>
+
+  <div style="display: flex; gap: 16px; flex-wrap: wrap">
+    <a href="CaseStudy.dc.html" style="flex: 2 1 560px; min-width: 0; height: clamp(320px, 42vw, 640px); background: #DADADA; display: flex; align-items: center; justify-content: center; color: #5C5C5C; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 24px; box-sizing: border-box">[ Monch — homepage, desktop ]</a>
+    <a href="CaseStudy.dc.html" style="flex: 1 1 280px; min-width: 0; height: clamp(320px, 42vw, 640px); background: #171717; color: #8C8C8C; display: flex; align-items: center; justify-content: center; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 24px; box-sizing: border-box">[ Monch — menu page, mobile ]</a>
+  </div>
+
+  <!-- numbered list, Mill3-style -->
+  <div style="margin-top: 56px; border-top: 1px solid #171717">
+    <a href="CaseStudy.dc.html" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2)">
+      <span style="flex: 0 0 90px; font-size: 15px; color: #5C5C5C">M001</span>
+      <span style="flex: 1 1 260px; font-size: clamp(32px, 3.6vw, 52px); letter-spacing: -0.04em; line-height: 1">Monch</span>
+      <span style="flex: 1 1 200px; font-size: 15px">Restaurant — [City]</span>
+      <span style="flex: 1 1 260px; font-size: 15px">Design, development, online menu</span>
+      <span style="flex: 0 0 60px; font-size: 15px">2026</span>
+      <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+    </a>
+    <a href="Contact.dc.html" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2); color: #5C5C5C">
+      <span style="flex: 0 0 90px; font-size: 15px">M002</span>
+      <span style="flex: 1 1 260px; font-size: clamp(32px, 3.6vw, 52px); letter-spacing: -0.04em; line-height: 1; font-family: 'Times Now', Georgia, serif; font-style: italic">Your restaurant?</span>
+      <span style="flex: 1 1 200px; font-size: 15px">This spot is open</span>
+      <span style="flex: 1 1 260px; font-size: 15px; color: #171717">Let’s talk about your place</span>
+      <span style="flex: 0 0 60px; font-size: 15px">2027</span>
+      <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+    </a>
+  </div>
+  <div style="margin-top: 32px">
+    <a href="Work.dc.html" style="display: inline-flex; align-items: center; gap: 10px; border-bottom: 1px solid #171717; padding-bottom: 4px; font-size: 16px; min-height: 44px; box-sizing: border-box">All projects</a>
+  </div>
+</section>
+
+<!-- ============ SERVICES (ink) ============ -->
+<section id="services" style="background: #171717; color: #F1F1F1; padding: clamp(96px, 11vw, 160px) clamp(16px, 2.8vw, 40px)">
+  <div style="display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 72px">
+    <div style="flex: 1 1 220px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #A3A3A3">( 03 ) Services</div>
+    <h2 style="flex: 999 1 640px; min-width: 0; margin: 0; font-weight: 400; font-size: clamp(40px, 5vw, 76px); line-height: 0.98; letter-spacing: -0.045em">
+      Everything a restaurant needs online. <span style="font-family: 'Times Now', Georgia, serif; font-style: italic; color: #A3A3A3">Nothing it doesn’t.</span>
+    </h2>
+  </div>
+
+  <div style="border-top: 1px solid rgba(241,241,241,0.25)">
+    <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; padding: 36px 0; border-bottom: 1px solid rgba(241,241,241,0.25)">
+      <span style="flex: 0 0 60px; color: #A3A3A3; font-size: 15px; padding-top: 10px">01</span>
+      <div style="flex: 1 1 340px; display: flex; align-items: center; gap: 20px">
+        <svg width="44" height="22" viewBox="0 0 44 22" fill="none" stroke="{{accent}}" stroke-width="2" aria-hidden="true"><path d="M22 11c-4-5-7-8-11-8a8 8 0 0 0 0 16c4 0 7-3 11-8s7-8 11-8a8 8 0 0 1 0 16c-4 0-7-3-11-8z"></path></svg>
+        <h3 style="margin: 0; font-weight: 400; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.035em">Website design</h3>
+      </div>
+      <p style="flex: 1 1 360px; margin: 0; font-size: 17px; line-height: 1.45; color: #D4D4D4; font-weight: 300">Art direction, layout and motion that feel like your place — not a template. Designed in Figma and reviewed with you on real phones.</p>
+      <div style="flex: 0 1 220px; font-size: 13px; line-height: 1.8; color: #A3A3A3; text-transform: uppercase; letter-spacing: 0.04em">Art direction<br>UI / UX<br>Motion</div>
+    </div>
+    <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; padding: 36px 0; border-bottom: 1px solid rgba(241,241,241,0.25)">
+      <span style="flex: 0 0 60px; color: #A3A3A3; font-size: 15px; padding-top: 10px">02</span>
+      <div style="flex: 1 1 340px; display: flex; align-items: center; gap: 20px">
+        <svg width="44" height="22" viewBox="0 0 44 22" fill="none" stroke="{{accent}}" stroke-width="2" aria-hidden="true"><path d="M22 11c-4-5-7-8-11-8a8 8 0 0 0 0 16c4 0 7-3 11-8s7-8 11-8a8 8 0 0 1 0 16c-4 0-7-3-11-8z"></path></svg>
+        <h3 style="margin: 0; font-weight: 400; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.035em">Development</h3>
+      </div>
+      <p style="flex: 1 1 360px; margin: 0; font-size: 17px; line-height: 1.45; color: #D4D4D4; font-weight: 300">Fast sites built with Next.js, set up with hosting, domain and analytics — and simple enough for your team to update.</p>
+      <div style="flex: 0 1 220px; font-size: 13px; line-height: 1.8; color: #A3A3A3; text-transform: uppercase; letter-spacing: 0.04em">Next.js<br>Headless CMS<br>Hosting &amp; domain</div>
+    </div>
+    <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; padding: 36px 0; border-bottom: 1px solid rgba(241,241,241,0.25)">
+      <span style="flex: 0 0 60px; color: #A3A3A3; font-size: 15px; padding-top: 10px">03</span>
+      <div style="flex: 1 1 340px; display: flex; align-items: center; gap: 20px">
+        <svg width="44" height="22" viewBox="0 0 44 22" fill="none" stroke="{{accent}}" stroke-width="2" aria-hidden="true"><path d="M22 11c-4-5-7-8-11-8a8 8 0 0 0 0 16c4 0 7-3 11-8s7-8 11-8a8 8 0 0 1 0 16c-4 0-7-3-11-8z"></path></svg>
+        <h3 style="margin: 0; font-weight: 400; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.035em">Menus &amp; reservations</h3>
+      </div>
+      <p style="flex: 1 1 360px; margin: 0; font-size: 17px; line-height: 1.45; color: #D4D4D4; font-weight: 300">Menus you can edit in minutes, in every language your guests speak — connected to your booking tool, WhatsApp or phone.</p>
+      <div style="flex: 0 1 220px; font-size: 13px; line-height: 1.8; color: #A3A3A3; text-transform: uppercase; letter-spacing: 0.04em">Digital menu<br>QR codes<br>Booking</div>
+    </div>
+    <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; padding: 36px 0; border-bottom: 1px solid rgba(241,241,241,0.25)">
+      <span style="flex: 0 0 60px; color: #A3A3A3; font-size: 15px; padding-top: 10px">04</span>
+      <div style="flex: 1 1 340px; display: flex; align-items: center; gap: 20px">
+        <svg width="44" height="22" viewBox="0 0 44 22" fill="none" stroke="{{accent}}" stroke-width="2" aria-hidden="true"><path d="M22 11c-4-5-7-8-11-8a8 8 0 0 0 0 16c4 0 7-3 11-8s7-8 11-8a8 8 0 0 1 0 16c-4 0-7-3-11-8z"></path></svg>
+        <h3 style="margin: 0; font-weight: 400; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.035em">Visibility</h3>
+      </div>
+      <p style="flex: 1 1 360px; margin: 0; font-size: 17px; line-height: 1.45; color: #D4D4D4; font-weight: 300">Google Business Profile, local SEO and a proper link in bio — so hungry people nearby actually find you.</p>
+      <div style="flex: 0 1 220px; font-size: 13px; line-height: 1.8; color: #A3A3A3; text-transform: uppercase; letter-spacing: 0.04em">Local SEO<br>Google Maps<br>Core Web Vitals</div>
+    </div>
+  </div>
+  <div style="margin-top: 40px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center">
+    <span style="font-size: 15px; color: #A3A3A3">Featured project for all four: <a href="CaseStudy.dc.html" style="color: #F1F1F1; border-bottom: 1px solid #F1F1F1">Monch (M001)</a></span>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <a href="Services.dc.html" style="border: 1px solid rgba(241,241,241,0.4); padding: 14px 22px; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">All services</a>
+      <a href="Contact.dc.html" style="background: {{accent}}; color: #171717; padding: 14px 22px; font-size: 15px; font-weight: 500; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Get a quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section style="padding: clamp(96px, 11vw, 160px) clamp(16px, 2.8vw, 40px)">
+  <div style="display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 72px">
+    <div style="flex: 1 1 220px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #5C5C5C">( 04 ) Process</div>
+    <h2 style="flex: 999 1 640px; min-width: 0; margin: 0; font-weight: 400; font-size: clamp(40px, 5vw, 76px); line-height: 0.98; letter-spacing: -0.045em">
+      From first taste <span style="font-family: 'Times Now', Georgia, serif; font-style: italic">to full service.</span>
+    </h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+    <div style="background: #FFFFFF; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 56px; min-height: 340px; box-sizing: border-box">
+      <div style="display: flex; justify-content: space-between; font-size: 15px"><span>01</span><span style="color: #5C5C5C">[1 week]</span></div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-weight: 400; font-size: 36px; letter-spacing: -0.035em">Taste</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.45; color: #3D3D3D">A call or a visit. We learn your menu, your guests and what “full” looks like for you.</p>
+      </div>
+    </div>
+    <div style="background: #FFFFFF; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 56px; min-height: 340px; box-sizing: border-box">
+      <div style="display: flex; justify-content: space-between; font-size: 15px"><span>02</span><span style="color: #5C5C5C">[2 weeks]</span></div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-weight: 400; font-size: 36px; letter-spacing: -0.035em">Plate</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.45; color: #3D3D3D">Art direction and key pages, designed and reviewed together. Two rounds of feedback included.</p>
+      </div>
+    </div>
+    <div style="background: #FFFFFF; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 56px; min-height: 340px; box-sizing: border-box">
+      <div style="display: flex; justify-content: space-between; font-size: 15px"><span>03</span><span style="color: #5C5C5C">[2 weeks]</span></div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-weight: 400; font-size: 36px; letter-spacing: -0.035em">Serve</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.45; color: #3D3D3D">We build, load your content, launch, and show your team how to update the menu.</p>
+      </div>
+    </div>
+    <div style="background: #171717; color: #F1F1F1; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 56px; min-height: 340px; box-sizing: border-box">
+      <div style="display: flex; justify-content: space-between; font-size: 15px"><span>04</span><span style="color: {{accent}}">Ongoing</span></div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-weight: 400; font-size: 36px; letter-spacing: -0.035em">Refill</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.45; color: #D4D4D4">Optional monthly care: seasonal menus, new pages, speed checks and small fixes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section style="padding: 0 clamp(16px, 2.8vw, 40px) clamp(96px, 11vw, 160px)">
+  <div style="display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 56px; padding-top: 40px; border-top: 1px solid rgba(23,23,23,0.16)">
+    <div style="flex: 1 1 220px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #5C5C5C">( 05 ) Packages</div>
+    <h2 style="flex: 999 1 640px; min-width: 0; margin: 0; font-weight: 400; font-size: clamp(40px, 5vw, 76px); line-height: 0.98; letter-spacing: -0.045em">Pick a size. <span style="font-family: 'Times Now', Georgia, serif; font-style: italic">We’ll season to taste.</span></h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+    <div style="border: 1px solid #171717; padding: 36px 32px; display: flex; flex-direction: column; gap: 28px">
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #5C5C5C">Starter</div>
+      <div style="font-size: 30px; letter-spacing: -0.03em; line-height: 1.1">A one-page site that does the basics beautifully.</div>
+      <div style="font-size: 44px; letter-spacing: -0.04em">[from PRICE]</div>
+      <div style="font-size: 16px; line-height: 2; border-top: 1px solid rgba(23,23,23,0.16); padding-top: 20px">Single scrolling page<br>Menu, hours, location<br>Booking or WhatsApp button<br>Google Business setup</div>
+      <a href="Contact.dc.html" style="margin-top: auto; border: 1px solid #171717; padding: 14px 20px; text-align: center; font-size: 15px; min-height: 44px; box-sizing: border-box">Start with Starter</a>
+    </div>
+    <div style="background: #171717; color: #F1F1F1; padding: 36px 32px; display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; justify-content: space-between; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #A3A3A3"><span>Signature</span><span style="color: {{accent}}">Most chosen</span></div>
+      <div style="font-size: 30px; letter-spacing: -0.03em; line-height: 1.1">A full website with your story, your menu and your bookings.</div>
+      <div style="font-size: 44px; letter-spacing: -0.04em">[from PRICE]</div>
+      <div style="font-size: 16px; line-height: 2; border-top: 1px solid rgba(241,241,241,0.2); padding-top: 20px">Custom design, up to [5] pages<br>Editable multilingual menu<br>Reservations integration<br>Motion &amp; photo direction<br>Local SEO setup</div>
+      <a href="Contact.dc.html" style="margin-top: auto; background: {{accent}}; color: #171717; padding: 14px 20px; text-align: center; font-size: 15px; font-weight: 500; min-height: 44px; box-sizing: border-box">Start with Signature</a>
+    </div>
+    <div style="border: 1px solid #171717; padding: 36px 32px; display: flex; flex-direction: column; gap: 28px">
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #5C5C5C">Care</div>
+      <div style="font-size: 30px; letter-spacing: -0.03em; line-height: 1.1">Monthly upkeep, so the site never goes stale.</div>
+      <div style="font-size: 44px; letter-spacing: -0.04em">[PRICE] <span style="font-size: 18px; letter-spacing: 0">/ month</span></div>
+      <div style="font-size: 16px; line-height: 2; border-top: 1px solid rgba(23,23,23,0.16); padding-top: 20px">Menu &amp; price updates<br>Seasonal pages and events<br>Hosting &amp; backups<br>Monthly visibility report</div>
+      <a href="Contact.dc.html" style="margin-top: auto; border: 1px solid #171717; padding: 14px 20px; text-align: center; font-size: 15px; min-height: 44px; box-sizing: border-box">Add Care</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="padding: 0 clamp(16px, 2.8vw, 40px) clamp(96px, 11vw, 160px); display: flex; gap: 40px; flex-wrap: wrap">
+  <div style="flex: 1 1 220px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #5C5C5C">( 06 ) Questions</div>
+  <div style="flex: 999 1 640px; min-width: 0; border-top: 1px solid #171717">
+    <div style="padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2)">
+      <div style="display: flex; justify-content: space-between; gap: 24px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em"><span>Do you only work with restaurants?</span><span aria-hidden="true">−</span></div>
+      <p style="margin: 16px 0 0; max-width: 640px; font-size: 16px; line-height: 1.5; color: #3D3D3D">Mostly. Food and hospitality is our focus — restaurants, cafés, bakeries, bars and small hotels. If you’re close to that world, ask.</p>
+    </div>
+    <div style="padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2); display: flex; justify-content: space-between; gap: 24px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em"><span>How long does a website take?</span><span aria-hidden="true">+</span></div>
+    <div style="padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2); display: flex; justify-content: space-between; gap: 24px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em"><span>Can I update the menu myself?</span><span aria-hidden="true">+</span></div>
+    <div style="padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2); display: flex; justify-content: space-between; gap: 24px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em"><span>Do you work with clients outside Morocco?</span><span aria-hidden="true">+</span></div>
+    <div style="padding: 28px 0; border-bottom: 1px solid rgba(23,23,23,0.2); display: flex; justify-content: space-between; gap: 24px; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em"><span>Do you take the food photos too?</span><span aria-hidden="true">+</span></div>
+  </div>
+</section>
+
+<!-- ============ CTA (accent) ============ -->
+<section style="background: {{accent}}; color: #171717; padding: clamp(80px, 9vw, 128px) clamp(16px, 2.8vw, 40px)">
+  <div style="font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 40px">( 07 ) Contact</div>
+  <h2 style="margin: 0; font-weight: 400; font-size: clamp(64px, 11vw, 168px); line-height: 0.88; letter-spacing: -0.055em">Got tables<br>to <span style="font-family: 'Times Now', Georgia, serif; font-style: italic; letter-spacing: -0.03em">fill?</span></h2>
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-top: 64px; padding-top: 28px; border-top: 1px solid #171717">
+    <div style="font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -0.03em; line-height: 1.25">
+      <a href="mailto:info@milcode.com" style="border-bottom: 1px solid #171717">info@milcode.com</a><br>
+      <a href="tel:+212713086047">+212 713 086 047</a>
+    </div>
+    <a href="Contact.dc.html" style="background: #171717; color: #F1F1F1; padding: 18px 28px; font-size: 16px; font-weight: 500; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 12px">Start a project
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12L12 2M4 2h8v8"></path></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER (ink) ============ -->
+<footer style="background: #171717; color: #F1F1F1; padding: 80px clamp(16px, 2.8vw, 40px) 32px">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; font-size: 16px; line-height: 2">
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #A3A3A3; margin-bottom: 12px">Sitemap</div>
+      <a href="Main.dc.html">Home</a><br><a href="Work.dc.html">Work</a><br><a href="Services.dc.html">Services</a><br><a href="Studio.dc.html">Studio</a><br><a href="Archive.dc.html">Archive</a><br><a href="Contact.dc.html">Contact</a>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #A3A3A3; margin-bottom: 12px">Follow</div>
+      <a href="https://instagram.com/milcodestudio">Instagram</a><br><a href="#">LinkedIn</a><br><a href="#">Behance</a><br><a href="#">Dribbble</a>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #A3A3A3; margin-bottom: 12px">Say hello</div>
+      <a href="mailto:info@milcode.com">info@milcode.com</a><br><a href="tel:+212713086047">+212 713 086 047</a>
+    </div>
+    <div>
+      <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #A3A3A3; margin-bottom: 12px">Studio</div>
+      Casablanca, Morocco<br>Working worldwide
+    </div>
+  </div>
+  <div style="font-size: clamp(96px, 25vw, 380px); line-height: 0.8; letter-spacing: -0.07em; margin: 96px 0 40px; display: flex; align-items: flex-end">milcode<span style="color: {{accent}}">.</span></div>
+  <div style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(241,241,241,0.16); font-size: 14px; color: #A3A3A3">
+    <span>© 2026 Milcode Studio</span>
+    <span style="display: flex; gap: 24px; flex-wrap: wrap"><a href="Terms.dc.html">Terms</a><a href="Privacy.dc.html">Privacy</a><span>Made with care in Casablanca</span></span>
+    <a href="#work" style="color: #F1F1F1">Back to top ↑</a>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C0FF0D","options":["#C0FF0D","#FF5A1F","#F1F1F1"]},"$preview":{"width":1440,"height":9300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#C0FF0D' };
+  }
+}
+</script>
+</body>
+</html>

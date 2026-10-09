@@ -1,38 +1,61 @@
 interface Service {
   id: number;
-  animatedIcon: string;
+  lottieIcon: string;
   title: string;
-  description: string;
+  Options: string[];
 }
 
 export const servicesData: Service[] = [
   {
     id: 1,
-    animatedIcon: "/assets/icons/sym.svg",
+    lottieIcon:
+      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
     title: "Strategy",
-    description:
-      "Digital + content strategy [:icon] brand positioning  discoverability tuned for growth.",
+    Options: [
+      "Digital Strategy",
+      "Content Strategy",
+      "Brand Positioning",
+      "Discoverability",
+    ],
   },
   {
     id: 2,
-    animatedIcon: "/assets/icons/sym.svg",
+    lottieIcon:
+      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
     title: "Design",
-    description:
-      "Interfaces in Figma [:icon] motion-led visuals Penopt details that feel alive.",
+    Options: [
+      "Branding",
+      "UX/UI Design",
+      "Web design",
+      "motion design",
+      "Content Creation",
+      "Interactive developement",
+    ],
   },
   {
     id: 3,
-    animatedIcon: "/assets/icons/sym.svg",
+    lottieIcon:
+      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
     title: "Technology",
-    description:
-      "Fast frontends dependable [:icon]  backends  motion pipelines  headless CMS builds.",
+    Options: [
+      "Front-end Development",
+      "Back-end Development",
+      "E-commerce Solutions",
+      "CMS Integration",
+      "Mobile App Development",
+    ],
   },
   {
     id: 4,
-    animatedIcon: "/assets/icons/sym.svg",
+    lottieIcon:
+      "https://lottie.host/03457988-468c-40d5-abb9-2ce6fd1e5ca4/wkTdhnVLNJ.lottie",
     title: "Performance",
-    description:
-      "SEO Core Web Vitals [:icon] ongoing tuning keeps experiences quick and visible.",
+    Options: [
+      "Online Optimization (SEO)",
+      "Convertion Rate Optimization (CRO)",
+      "Data Analysis",
+      "Social Compaigns",
+    ],
   },
 ];
 

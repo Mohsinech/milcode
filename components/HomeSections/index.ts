@@ -4,5 +4,17 @@ import FeaturedProject from "./FeaturedProject/FeaturedProject";
 import ShortAbout from "./ShortAbout/ShortAbout";
 import Project from "./Project/Project";
 import Services from "./Services/Services";
+//
+import PrSection from "./ProjectsSection/PrSection";
+import ProjectGrid from "./ProjectGrid/ProjectGrid";
 
-export { Hero, Intro, FeaturedProject, ShortAbout, Project, Services };
+export {
+  Hero,
+  Intro,
+  FeaturedProject,
+  ShortAbout,
+  Project,
+  Services,
+  PrSection,
+  ProjectGrid,
+};

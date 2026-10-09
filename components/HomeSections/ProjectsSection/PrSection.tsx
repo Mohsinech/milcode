@@ -4,12 +4,11 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./intro.module.css";
 
-const Intro = () => {
+const PrSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20% 0px" });
 
-  const firstWord = "F✳rmed".split("");
-  const secondWord = "Innovation".split("");
+  const firstWord = "projects".split("");
 
   const letterVariants = {
     hidden: { y: "150%", skewY: 30 },
@@ -42,25 +41,10 @@ const Intro = () => {
               </motion.h1>
             ))}
           </div>
-
-          <div className="overflow-hidden relative">
-            {secondWord.map((letter, index) => (
-              <motion.h1
-                key={index}
-                custom={index}
-                variants={letterVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                style={{ display: "inline-block" }}
-              >
-                {letter}
-              </motion.h1>
-            ))}
-          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Intro;
+export default PrSection;

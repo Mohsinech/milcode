@@ -1,6 +1,6 @@
 .project {
   height: 100dvh;
-  background-color: #d8d8d8;
+  background-color: #000;
   z-index: 999999;
   display: flex;
   justify-content: center;

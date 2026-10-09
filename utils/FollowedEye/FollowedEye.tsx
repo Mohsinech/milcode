@@ -8,9 +8,15 @@ const EYE_RADIUS = 9;
 const DOT_RADIUS = 4;
 const MAX_MOVE = EYE_RADIUS - DOT_RADIUS;
 
-const FollowedEye = () => {
+interface FollowedEyeProps {
+  // ink eyes for light backgrounds; defaults to the /contact check
+  dark?: boolean;
+}
+
+const FollowedEye = ({ dark }: FollowedEyeProps) => {
   //
   const pathname = usePathname();
+  const isDark = dark ?? pathname === "/contact";
 
   const eyeRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const [dotPositions, setDotPositions] = useState([
@@ -52,19 +58,19 @@ const FollowedEye = () => {
     <div className={styles.eyes}>
       {[0, 1].map((i) => (
         <div
-          className={pathname === "/contact" ? styles.eyeContact : styles.eye}
+          className={isDark ? styles.eyeContact : styles.eye}
           key={i}
           ref={eyeRefs[i]}
         >
           <div
-            className={pathname === "/contact" ? styles.dotConatct : styles.dot}
+            className={isDark ? styles.dotConatct : styles.dot}
             style={{
               transform: `translate(${dotPositions[i].x}px, ${dotPositions[i].y}px)`,
             }}
           />
           <div
             className={
-              pathname === "/contact" ? styles.eyelidContact : styles.eyelid
+              isDark ? styles.eyelidContact : styles.eyelid
             }
           ></div>
         </div>

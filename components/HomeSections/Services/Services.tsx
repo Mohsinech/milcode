@@ -9,8 +9,12 @@ const Services = () => {
     <section className={styles.services}>
       <div className={styles.content}>
         <h1>
-          <sup>our services</sup>
-          Helping brands thrive through strategy, design, and development{" "}
+          <sup> our services</sup>
+        </h1>
+
+        <h1>
+          <span className={styles.span}></span> Helping brands thrive through
+          strategy, design, and development{" "}
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
@@ -21,7 +25,12 @@ const Services = () => {
             }}
             className={styles.rotatingLines}
           >
-            <Image src="/assets/icons/sym.svg" fill alt="rotating lines" />
+            <Image
+              src="/assets/icons/sym.svg"
+              fill
+              alt="rotating lines"
+              className={styles.rotatingIconWhite}
+            />
           </motion.div>{" "}
           building digital experiences that inspire, engage, and drive growth.
         </h1>

@@ -1,6 +1,38 @@
 @import "tailwindcss";
 /* @import "tw-animate-css"; */
 
+/* Design tokens */
+:root {
+  /* Colors */
+  --ink: #171717;
+  --paper: #f1f1f1;
+  --white: #ffffff;
+  --accent: #c0ff0d;
+
+  /* Text on light surfaces */
+  --text-body: #3d3d3d;
+  --text-label: #5c5c5c;
+  /* Text on dark surfaces */
+  --text-body-dark: #d4d4d4;
+  --text-label-dark: #a3a3a3;
+
+  /* Hairlines */
+  --line: rgba(23, 23, 23, 0.16);
+  --line-dark: rgba(241, 241, 241, 0.16);
+
+  /* Fonts */
+  --font-sans: "mon", "Helvetica Neue", Helvetica, sans-serif;
+  --font-serif: "times", "Times New Roman", serif;
+
+  /* Spacing */
+  --gutter: clamp(16px, 2.8vw, 40px);
+  --section-pad: clamp(96px, 11vw, 160px);
+  --touch: 44px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.87, 0.13, 0, 1);
+}
+
 body,
 html {
   margin: 0;

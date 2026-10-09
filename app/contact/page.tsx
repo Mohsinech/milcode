@@ -5,8 +5,7 @@ import styles from "./page.module.css";
 import { motion } from "framer-motion";
 import { usePreloader } from "@/context/PreloaderContext";
 import { SplitText } from "@/components/ui";
-import useLenis from "@/hooks/useLenis";
-import { FormItem } from "@/components";
+import { FormItem } from "@/components/index";
 
 const getCurrentTime = () => {
   const now = new Date();
@@ -23,9 +22,6 @@ const isOpen = () => {
 };
 
 const Contact = () => {
-  //
-  useLenis();
-
   const [time, setTime] = useState(getCurrentTime());
   const [open, setOpen] = useState(isOpen());
 

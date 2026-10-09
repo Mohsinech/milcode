@@ -1,13 +1,20 @@
-interface Link {
-  id: number;
+interface NavLink {
   label: string;
+  href: string;
 }
 
-const navLinks: Link[] = [
-  { id: 1, label: "Home" },
-  { id: 2, label: "Showcases" },
-  { id: 3, label: "Work" },
-  { id: 4, label: "About" },
+export const navLinks: NavLink[] = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "Studio", href: "/studio" },
+  { label: "Contact", href: "/contact" },
 ];
 
-export default navLinks;
+// Routes whose top section is light (paper or lime), so the header switches to ink
+export const lightHeaderRoutes = [
+  "/work",
+  "/studio",
+  "/contact",
+  "/terms",
+  "/privacy",
+];

@@ -1,67 +1,81 @@
 .gridServices {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
+  /* gap: 1rem; */
+  width: 100%;
 }
 
-.card {
-  gap: 3rem;
-  padding: 2rem 0;
+.accordion {
+  /* padding: 1rem; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.card:nth-child(odd) {
-  border-right: 1px solid #eaeaea;
-}
-
-.card:nth-child(1) {
-  border-bottom: 1px solid #eaeaea;
-}
-
-.card:nth-child(2) {
-  border-bottom: 1px solid #eaeaea;
-  padding: 2rem;
-}
-
-.card:nth-child(4) {
-  padding: 2rem;
+.headerButton {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.header .imageWrapper {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  overflow: hidden;
+  /* gap: 1rem; */
 }
 
 .header h2 {
-  font-family: "mori", sans-serif;
-  font-size: 1.75rem;
+  font-family: "mon", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  letter-spacing: -0.035rem;
   color: #f1f1f1;
 }
 
-.card p {
-  font-family: "times", sans-serif;
-  font-size: 1.75rem;
-  width: 70%;
-  line-height: normal;
-  color: #d1d1d1;
+.lottie {
+  width: 10rem;
+  height: auto;
 }
 
-.inlineIcon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.35em;
-  vertical-align: -0.15em;
-  opacity: 0.9;
+/*  */
+.options {
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem;/ */
+  /* padding-top: 1rem; */
+  overflow: hidden;
+}
+
+.opHidden {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+  overflow: hidden;
+}
+
+.opHidden h2 {
+  font-family: "mon", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  color: #fff;
+  line-height: normal;
+}
+
+.opHidden .line {
+  width: 100%;
+  height: 1px;
+  background-color: #f1f1f1;
+  margin: 1.5rem 0;
+}
+
+.opHidden:last-child .line {
+  display: none;
+}
+
+.opHidden:last-chilagd h2 {
+  padding-bottom: 2rem;
 }
