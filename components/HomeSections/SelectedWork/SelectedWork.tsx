@@ -5,7 +5,7 @@ import { Link } from "next-view-transitions";
 import SectionLabel from "@/components/SectionLabel/SectionLabel";
 import { RevealLines, FadeIn } from "@/components/Reveal/Reveal";
 import { TransitionLink } from "@/utils";
-import { clientProjects } from "@/data/projects";
+import { clientProjects, projectHref } from "@/data/projects";
 
 const nextNo = `M${String(clientProjects.length + 1).padStart(3, "0")}`;
 
@@ -56,13 +56,13 @@ const SelectedWork = () => {
 
       <FadeIn className={styles.shots}>
         <Link
-          href="/work/monch"
+          href={projectHref(clientProjects[0])}
           className={`${section.placeholder} ${styles.shotDesktop}`}
         >
           [ Monch — homepage, desktop ]
         </Link>
         <Link
-          href="/work/monch"
+          href={projectHref(clientProjects[0])}
           className={`${section.placeholder} ${styles.shotMobile}`}
         >
           [ Monch — menu page, mobile ]
@@ -71,7 +71,7 @@ const SelectedWork = () => {
 
       <FadeIn className={styles.list}>
         {clientProjects.map((p) => (
-          <Link key={p.no} href={p.href} className={styles.row}>
+          <Link key={p.no} href={projectHref(p)} className={styles.row}>
             <span className={styles.number}>{p.no}</span>
             <span className={styles.name}>{p.name}</span>
             <span className={styles.cell}>

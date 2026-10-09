@@ -9,6 +9,7 @@ import { RevealLines, FadeIn } from "@/components/Reveal/Reveal";
 import {
   clientProjects,
   projectFilters,
+  projectHref,
   type ProjectCategory,
 } from "@/data/projects";
 
@@ -83,7 +84,7 @@ const Projects = () => {
       <section className={styles.projects}>
         <FadeIn className={styles.cards}>
           {visible.map((p) => (
-            <Link key={p.no} href={p.href} className={styles.card}>
+            <Link key={p.no} href={projectHref(p)} className={styles.card}>
               <div
                 className={`${section.placeholder} ${styles.cover} ${
                   styles[p.cover.tone]
@@ -135,7 +136,7 @@ const Projects = () => {
             <span className={styles.colYear}>Year</span>
           </div>
           {visible.map((p) => (
-            <Link key={p.no} href={p.href} className={styles.tableRow}>
+            <Link key={p.no} href={projectHref(p)} className={styles.tableRow}>
               <span className={styles.colNo}>{p.no}</span>
               <span className={`${styles.colName} ${styles.rowName}`}>
                 {p.name}

@@ -1,0 +1,414 @@
+/* ---------- Hero (light) ---------- */
+.hero {
+  /* fixed header (28px + 44px + 28px) + design spacing */
+  padding: calc(100px + 72px) var(--gutter) 80px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.heroTitle {
+  margin: 0;
+  padding-top: 40px;
+  font-size: clamp(56px, 9.6vw, 148px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 var(--gutter);
+}
+
+.photo,
+.portrait {
+  min-width: 0;
+  height: clamp(360px, 40vw, 600px);
+}
+
+.photo {
+  flex: 2 1 560px;
+  background-color: #dadada;
+  color: var(--text-label);
+}
+
+.portrait {
+  flex: 1 1 280px;
+  background-color: var(--ink);
+  color: #8c8c8c;
+}
+
+/* ---------- Label column + main column ---------- */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: var(--section-pad) var(--gutter);
+}
+
+.storyLead {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.4vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.storyCols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+/* ---------- Numbers ---------- */
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 0;
+  padding: 0 var(--gutter) var(--section-pad);
+  list-style: none;
+}
+
+.number {
+  padding: 32px 24px 32px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid rgba(23, 23, 23, 0.2);
+}
+
+.numberValue {
+  display: block;
+  font-size: clamp(56px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.numberLabel {
+  display: block;
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--text-body);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- People (dark) ---------- */
+.people {
+  padding: var(--section-pad) var(--gutter);
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.peopleLabel {
+  margin-bottom: 56px;
+}
+
+.founder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.founderPortrait {
+  flex: 1 1 320px;
+  height: 480px;
+  background-color: #262626;
+  border: 1px dashed rgba(241, 241, 241, 0.22);
+  color: #8c8c8c;
+}
+
+.founderName {
+  margin: 0;
+  font-size: clamp(48px, 5.6vw, 84px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.founderRole {
+  margin: 16px 0 0;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.founderBio {
+  max-width: 620px;
+  margin: 32px 0 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-body-dark);
+}
+
+.founderLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  font-size: 15px;
+}
+
+/* Placeholder link: same look, no href yet */
+.plainLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  color: var(--text-label-dark);
+}
+
+.founderLinks a:focus-visible,
+.join:focus-visible,
+.talk:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.brigade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 96px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(241, 241, 241, 0.25);
+}
+
+.brigadeLabel {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brigadeIntro {
+  margin: 0 0 32px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-body-dark);
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner {
+  height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid rgba(241, 241, 241, 0.25);
+}
+
+.partnerRole {
+  display: block;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.partnerName {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-label-dark);
+}
+
+/* ---------- House rules ---------- */
+.rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rule {
+  height: 100%;
+  padding-top: 28px;
+  border-top: 1px solid var(--ink);
+}
+
+.ruleNum {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--text-label);
+}
+
+.ruleTitle {
+  margin: 0 0 14px;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.ruleText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* ---------- Working together (white) ---------- */
+.working {
+  background-color: var(--white);
+}
+
+.details {
+  margin: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.detailLabel {
+  flex: 1 1 220px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.detailText {
+  flex: 2 1 320px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* ---------- Tools ---------- */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  padding: 12px 22px;
+  box-sizing: border-box;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 18px;
+}
+
+/* ---------- Recognition + Join ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 16px;
+  padding: 0 var(--gutter) var(--section-pad);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.recognition {
+  border: 1px solid var(--ink);
+}
+
+.awards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardTitle {
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.awardDetail {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--text-label);
+}
+
+.join {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.joinCta {
+  margin-top: auto;
+  font-size: 16px;
+  color: var(--accent);
+  transition: opacity 0.4s var(--ease);
+}
+
+.join:hover .joinCta {
+  opacity: 0.72;
+}
+
+/* ---------- Let's talk (lime) ---------- */
+.talk {
+  display: block;
+  padding: clamp(80px, 9vw, 128px) var(--gutter);
+  background-color: var(--accent);
+  color: var(--ink);
+}
+
+.talkLabel {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.talkTitle {
+  font-size: clamp(64px, 11vw, 168px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}

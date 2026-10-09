@@ -9,6 +9,25 @@ export interface Cover {
   src?: string;
 }
 
+// Every field is optional: the case study page hides any section without data
+export interface CaseStudy {
+  tagline?: string;
+  intro?: string;
+  heroMedia?: Cover;
+  client?: string;
+  // one entry per line
+  scope?: string[];
+  stack?: string[];
+  liveUrl?: string;
+  challenge?: string;
+  approach?: string;
+  gallery?: (Cover & { size: "wide" | "tall" })[];
+  typography?: { sample: string; fonts: string };
+  palette?: { colors: string[]; note?: string };
+  results?: { value: string; label: string }[];
+  quote?: { text: string; name: string; role: string };
+}
+
 export interface ClientProject {
   no: string; // M001, M002…
   name: string;
@@ -17,8 +36,10 @@ export interface ClientProject {
   location: string;
   scope: string;
   year: string;
-  href: string;
+  // set when the project has a case study at /work/[slug]
+  slug?: string;
   cover: Cover;
+  caseStudy?: CaseStudy;
 }
 
 export interface ArchiveItem {
@@ -41,10 +62,64 @@ export const clientProjects: ClientProject[] = [
     location: "[City]",
     scope: "Design, development, menu",
     year: "2026",
-    href: "/work/monch",
+    slug: "monch",
     cover: { label: "[ Monch — cover image / hover video ]", tone: "dark" },
+    caseStudy: {
+      tagline: "A table, unhurried.",
+      intro:
+        "A website as calm and considered as the food — slow-paced, seasonal and built to turn visits into bookings.",
+      heroMedia: {
+        label: "[ Monch homepage — full-bleed hero video ]",
+        tone: "dark",
+      },
+      client: "Monch — [City, Country]",
+      scope: ["Art direction, UI design,", "development, online menu"],
+      stack: ["Next.js, GSAP, Lenis,", "[CMS]"],
+      liveUrl: "[monch-domain.com]",
+      challenge:
+        "[What Monch had before — e.g. an Instagram page and a PDF menu. What wasn’t working: hard to find on Google, bookings by DM, menu out of date.]",
+      approach:
+        "[Your idea in two sentences — e.g. slow, editorial pacing to match the dining room; serif headlines, warm imagery and one clear “Book a table” action on every screen.]",
+      gallery: [
+        { label: "[ Full homepage scroll — desktop ]", tone: "light", size: "wide" },
+        { label: "[ Mobile — home ]", tone: "dark", size: "tall" },
+        { label: "[ Mobile — menu ]", tone: "green", size: "tall" },
+        { label: "[ Mobile — reservations ]", tone: "dark", size: "tall" },
+      ],
+      typography: { sample: "Aa", fonts: "[Monch display font] / [body font]" },
+      palette: {
+        colors: ["#3A2A22", "#F2EBDD", "#8E2A1E", "#C9B79A"],
+        note: "[Replace with Monch colors]",
+      },
+      results: [
+        { value: "[+XX%]", label: "Online reservations" },
+        { value: "[X.Xs]", label: "Load time on mobile" },
+        { value: "[X]", label: "Menu languages" },
+      ],
+      quote: {
+        text: "[A real quote from the Monch owner, once you have it.]",
+        name: "[Name]",
+        role: "[Role]",
+      },
+    },
   },
 ];
+
+// Case study page if there is one, otherwise the work index
+export const projectHref = (p: ClientProject) =>
+  p.slug ? `/work/${p.slug}` : "/work";
+
+export const getProject = (slug: string) =>
+  clientProjects.find((p) => p.slug === slug);
+
+// The next project with a case study, or undefined after the last one
+export const getNextProject = (slug: string) => {
+  const withCase = clientProjects.filter((p) => p.slug);
+  const i = withCase.findIndex((p) => p.slug === slug);
+  return i === -1 ? undefined : withCase[i + 1];
+};
+
+export const nextProjectNo = `M${String(clientProjects.length + 1).padStart(3, "0")}`;
 
 export const archiveItems: ArchiveItem[] = [
   {
