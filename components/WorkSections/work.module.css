@@ -1,0 +1,378 @@
+/* ---------- Hero (light) ---------- */
+.hero {
+  /* fixed header (28px + 44px + 28px) + design spacing */
+  padding: calc(100px + 72px) var(--gutter) 48px;
+}
+
+.heroTitle {
+  margin: 24px 0 0;
+  font-size: clamp(64px, 13.4vw, 200px);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.heroBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.lead {
+  max-width: 520px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter {
+  min-height: var(--touch);
+  padding: 10px 18px;
+  box-sizing: border-box;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+
+.filter[aria-pressed="true"] {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.filter:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------- Cards ---------- */
+.projects {
+  padding: 0 var(--gutter) 120px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  gap: 48px 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--ink);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.cover {
+  position: relative;
+  height: clamp(320px, 34vw, 520px);
+  overflow: hidden;
+}
+
+.dark {
+  background-color: var(--ink);
+  color: #8c8c8c;
+}
+
+.light {
+  background-color: #dadada;
+  color: var(--text-label);
+}
+
+.green {
+  background-color: #0f2a24;
+  color: #8fb8aa;
+}
+
+.tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 6px 10px;
+  border: 1px solid var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.tagAccent {
+  border-color: var(--accent);
+  background-color: var(--accent);
+}
+
+.reserved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px dashed #8c8c8c;
+  text-align: center;
+  transition: border-color 0.6s var(--ease);
+}
+
+.card:hover .reserved {
+  border-color: var(--ink);
+}
+
+.reservedTitle {
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.reservedText {
+  font-size: 15px;
+  color: var(--text-body);
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cardName {
+  font-size: clamp(30px, 3vw, 44px);
+  letter-spacing: -0.04em;
+  transition: transform 0.6s var(--ease);
+}
+
+.card:hover .cardName {
+  transform: translateX(12px);
+}
+
+.cardInfo {
+  font-size: 14px;
+  color: var(--text-label);
+}
+
+.muted {
+  color: var(--text-label);
+}
+
+.underline {
+  font-size: 14px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.empty {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-label);
+}
+
+.cards > .empty {
+  align-self: center;
+}
+
+/* ---------- Table ---------- */
+.table {
+  margin-top: 120px;
+  border-top: 1px solid var(--ink);
+}
+
+.tableHead,
+.tableRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.2);
+}
+
+.tableHead {
+  padding: 18px 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+.tableRow {
+  align-items: baseline;
+  padding: 24px 0;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.tableRow:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.colNo {
+  flex: 0 0 90px;
+}
+
+.colName {
+  flex: 1 1 240px;
+}
+
+.colType {
+  flex: 1 1 200px;
+}
+
+.colScope {
+  flex: 1 1 240px;
+}
+
+.colYear {
+  flex: 0 0 60px;
+}
+
+.rowName {
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  transition: transform 0.6s var(--ease);
+}
+
+.tableRow:hover .rowName {
+  transform: translateX(12px);
+}
+
+/* ---------- Archive banner ---------- */
+.bannerWrap {
+  padding: 0 var(--gutter) 120px;
+}
+
+.banner {
+  display: block;
+  padding: clamp(40px, 5vw, 72px);
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.banner:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.bannerMeta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-label-dark);
+}
+
+.bannerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.bannerTitle {
+  font-size: clamp(64px, 10vw, 152px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumb {
+  width: 120px;
+  height: 150px;
+  box-sizing: border-box;
+  transition: transform 0.6s var(--ease);
+}
+
+.thumb:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.thumb:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.banner:hover .thumb {
+  transform: translateY(-8px);
+}
+
+.thumbDark {
+  background-color: #262626;
+  border: 1px dashed rgba(241, 241, 241, 0.22);
+}
+
+.thumbLight {
+  background-color: #dadada;
+}
+
+.bannerBottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(241, 241, 241, 0.2);
+  font-size: 16px;
+}
+
+.bannerText {
+  color: var(--text-body-dark);
+}
+
+.bannerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bannerCta svg {
+  transition: transform 0.6s var(--ease);
+}
+
+.banner:hover .bannerCta svg {
+  transform: translate(3px, -3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter,
+  .reserved,
+  .cardName,
+  .rowName,
+  .thumb,
+  .bannerCta svg {
+    transition: none;
+  }
+}

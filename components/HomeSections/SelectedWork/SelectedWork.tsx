@@ -5,6 +5,9 @@ import { Link } from "next-view-transitions";
 import SectionLabel from "@/components/SectionLabel/SectionLabel";
 import { RevealLines, FadeIn } from "@/components/Reveal/Reveal";
 import { TransitionLink } from "@/utils";
+import { clientProjects } from "@/data/projects";
+
+const nextNo = `M${String(clientProjects.length + 1).padStart(3, "0")}`;
 
 const Arrow = () => (
   <svg
@@ -67,18 +70,20 @@ const SelectedWork = () => {
       </FadeIn>
 
       <FadeIn className={styles.list}>
-        <Link href="/work/monch" className={styles.row}>
-          <span className={styles.number}>M001</span>
-          <span className={styles.name}>Monch</span>
-          <span className={styles.cell}>Restaurant — [City]</span>
-          <span className={styles.cellWide}>
-            Design, development, online menu
-          </span>
-          <span className={styles.year}>2026</span>
-          <Arrow />
-        </Link>
+        {clientProjects.map((p) => (
+          <Link key={p.no} href={p.href} className={styles.row}>
+            <span className={styles.number}>{p.no}</span>
+            <span className={styles.name}>{p.name}</span>
+            <span className={styles.cell}>
+              {p.type} — {p.location}
+            </span>
+            <span className={styles.cellWide}>{p.scope}</span>
+            <span className={styles.year}>{p.year}</span>
+            <Arrow />
+          </Link>
+        ))}
         <Link href="/contact" className={`${styles.row} ${styles.rowOpen}`}>
-          <span className={styles.number}>M002</span>
+          <span className={styles.number}>{nextNo}</span>
           <span className={`${styles.name} ${section.serif}`}>
             Your restaurant?
           </span>
