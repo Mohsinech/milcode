@@ -16,6 +16,7 @@ interface TransitionLinkProps {
   children?: React.ReactNode;
   // call e.preventDefault() to skip navigation (e.g. Lenis anchor scroll)
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  ariaCurrent?: "page" | "location";
 }
 
 // external, mailto: and tel: links stay plain <a>
@@ -29,6 +30,7 @@ const TransitionLink: React.FC<TransitionLinkProps> = ({
   className,
   children,
   onClick,
+  ariaCurrent,
 }) => {
   const [hovered, setHovered] = useState(false);
   const letters = label.split("");
@@ -108,6 +110,7 @@ const TransitionLink: React.FC<TransitionLinkProps> = ({
     onMouseEnter: () => setHovered(true),
     onMouseLeave: () => setHovered(false),
     onClick,
+    "aria-current": ariaCurrent,
   };
 
   if (isInternal(href)) {

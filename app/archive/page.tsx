@@ -4,7 +4,7 @@ import archive from "@/components/ArchiveSections/archive.module.css";
 import { ArchiveIndex, Lab, CurrentWork } from "@/components/ArchiveSections";
 
 export const metadata = {
-  title: "Archive — Milcode Studio",
+  title: "Archive",
   description:
     "Before restaurants: e-commerce, brand sites, portfolios and experiments by Milcode Studio. Numbered A, for archive.",
 };

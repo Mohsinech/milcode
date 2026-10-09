@@ -13,7 +13,7 @@ import {
 } from "@/components/HomeSections";
 
 export const metadata = {
-  title: "Milcode Studio — Websites for restaurants",
+  title: { absolute: "Milcode Studio — Websites for restaurants" },
   description:
     "An independent studio in Casablanca designing and building websites for restaurants, cafés and hotels — with online menus, reservations and local SEO.",
 };

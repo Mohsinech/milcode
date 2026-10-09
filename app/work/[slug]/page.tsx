@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tagline, intro } = project.caseStudy ?? {};
 
   return {
-    title: `${project.name} — Case study — Milcode Studio`,
+    title: `${project.name} — Case study`,
     description:
       intro ??
       tagline ??

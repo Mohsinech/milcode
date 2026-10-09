@@ -7,7 +7,7 @@ import {
 } from "@/components/ContactSections";
 
 export const metadata = {
-  title: "Contact — Milcode Studio",
+  title: "Contact",
   description:
     "Tell us about your restaurant, café or hotel. Milcode Studio in Casablanca replies within one working day — by email or WhatsApp.",
 };

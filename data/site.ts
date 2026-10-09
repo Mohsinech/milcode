@@ -1,5 +1,13 @@
 // Studio contact details — the single source for Footer, Home CTA and /contact
 
+// Production origin for metadataBase, sitemap and robots — placeholder until the domain is live
+export const SITE_URL = "https://milcode.com";
+
+export const SITE_NAME = "Milcode Studio";
+
+export const SITE_DESCRIPTION =
+  "An independent studio in Casablanca designing and building websites for restaurants, cafés and hotels — with online menus, reservations and local SEO.";
+
 export interface SiteLink {
   label: string;
   href: string;

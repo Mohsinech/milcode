@@ -102,24 +102,8 @@ export const houseRules: HouseRule[] = [
   },
 ];
 
-export const workingDetails: WorkingDetail[] = [
-  {
-    label: "Where",
-    text: "On site in Casablanca, remote everywhere else. Video calls in Morocco, Europe and beyond.",
-  },
-  { label: "Languages", text: "Darija, Arabic, French and English." },
-  {
-    label: "Hours",
-    text: "[Mon–Fri, 9:00–19:00] GMT+1 — we know restaurants work late, so evening calls are fine.",
-  },
-  {
-    label: "Payment",
-    text: "[50% to start, 50% at launch.] Bank transfer, MAD or EUR.",
-  },
-];
-
-// Drives the "Open now — Casablanca 16:08" status on /contact.
-// Mirrors the [Mon–Fri, 9:00–19:00] placeholder above — update both together.
+// Single source for studio hours: drives the "Open now — Casablanca 16:08" status
+// on /contact and the "Hours" line in Working together. Still placeholder hours.
 export const openHours = {
   timeZone: "Africa/Casablanca",
   // 0 = Sunday … 6 = Saturday
@@ -128,6 +112,50 @@ export const openHours = {
   open: 9 * 60,
   close: 19 * 60,
 };
+
+const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const formatTime = (minutes: number) =>
+  `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, "0")}`;
+
+// [1, 2, 3, 4, 5] → "Mon–Fri"; gaps become separate runs: [1, 3, 4] → "Mon, Wed–Thu"
+const formatDays = (days: number[]) => {
+  const sorted = [...days].sort((a, b) => a - b);
+  const runs: number[][] = [];
+  for (const d of sorted) {
+    const run = runs[runs.length - 1];
+    if (run && d === run[run.length - 1] + 1) run.push(d);
+    else runs.push([d]);
+  }
+  return runs
+    .map((r) =>
+      r.length === 1
+        ? DAY_NAMES[r[0]]
+        : `${DAY_NAMES[r[0]]}–${DAY_NAMES[r[r.length - 1]]}`
+    )
+    .join(", ");
+};
+
+// Brackets stay until the hours are confirmed
+export const hoursText = `[${formatDays(openHours.days)}, ${formatTime(
+  openHours.open
+)}–${formatTime(openHours.close)}]`;
+
+export const workingDetails: WorkingDetail[] = [
+  {
+    label: "Where",
+    text: "On site in Casablanca, remote everywhere else. Video calls in Morocco, Europe and beyond.",
+  },
+  { label: "Languages", text: "Darija, Arabic, French and English." },
+  {
+    label: "Hours",
+    text: `${hoursText} GMT+1 — we know restaurants work late, so evening calls are fine.`,
+  },
+  {
+    label: "Payment",
+    text: "[50% to start, 50% at launch.] Bank transfer, MAD or EUR.",
+  },
+];
 
 export const tools: string[] = [
   "Figma",
