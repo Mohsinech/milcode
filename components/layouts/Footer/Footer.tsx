@@ -10,6 +10,7 @@ import {
   socials,
   contact,
   instagram,
+  address,
   fullFooterRoutes,
 } from "./data";
 
@@ -90,9 +91,9 @@ const Footer = ({ compact }: FooterProps) => {
         <div className={styles.column}>
           <span className={styles.heading}>Studio</span>
           <p>
-            Casablanca, Morocco
+            {address.city}
             <br />
-            Working worldwide
+            {address.note}
           </p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Button from "@/components/Button/Button";
 import SectionLabel from "@/components/SectionLabel/SectionLabel";
 import { RevealLines, FadeIn } from "@/components/Reveal/Reveal";
 import { TransitionLink } from "@/utils";
+import { email, phone } from "@/data/site";
 
 const ContactCta = () => {
   return (
@@ -25,11 +26,11 @@ const ContactCta = () => {
       <FadeIn className={styles.bottom}>
         <div className={styles.contact}>
           <TransitionLink
-            label="info@milcode.com"
-            href="mailto:info@milcode.com"
+            label={email.label}
+            href={email.href}
             className={styles.email}
           />
-          <TransitionLink label="+212 713 086 047" href="tel:+212713086047" />
+          <TransitionLink label={phone.label} href={phone.href} />
         </div>
         <Button
           label="Start a project"

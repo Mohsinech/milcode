@@ -9,7 +9,7 @@ const StudioHero = () => (
   <>
     <section className={styles.hero}>
       <FadeIn className={styles.meta} onMount delay={0.6}>
-        <SectionLabel index="06" label="Studio" />
+        <SectionLabel label="Studio" />
         <span>{studioMeta.location}</span>
         <span>{studioMeta.established}</span>
       </FadeIn>

@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./label.module.css";
 
 interface SectionLabelProps {
-  // e.g. "01"
-  index: string;
+  // e.g. "01"; omit for a plain label (page heroes whose sections number themselves)
+  index?: string;
   label: string;
   surface?: "light" | "dark";
   className?: string;
@@ -21,7 +21,7 @@ const SectionLabel = ({
         surface === "dark" ? styles.onDark : ""
       } ${className}`}
     >
-      ( {index} ) {label}
+      {index ? `( ${index} ) ${label}` : label}
     </span>
   );
 };

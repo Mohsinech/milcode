@@ -7,11 +7,14 @@ import { FollowedEye, TransitionLink } from "@/utils";
 import { Link } from "next-view-transitions";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "@/components/Button/Button";
+import OpenStatus from "@/components/ContactSections/OpenStatus";
 import { navLinks, lightHeaderRoutes } from "./data";
 
 const Header = () => {
   const pathname = usePathname();
   const isLight = lightHeaderRoutes.includes(pathname);
+  // /contact swaps the CTA for the studio's live open/closed status
+  const isContact = pathname === "/contact";
 
   // track scroll
   const { scrollY } = useScroll();
@@ -49,13 +52,17 @@ const Header = () => {
         </ul>
       </nav>
 
-      <Button
-        label="Start a project"
-        href="/contact"
-        variant={isLight ? "solid" : "accent"}
-        arrow
-        className={styles.cta}
-      />
+      {isContact ? (
+        <OpenStatus />
+      ) : (
+        <Button
+          label="Start a project"
+          href="/contact"
+          variant={isLight ? "solid" : "accent"}
+          arrow
+          className={styles.cta}
+        />
+      )}
     </motion.header>
   );
 };

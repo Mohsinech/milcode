@@ -1,9 +1,8 @@
-interface FooterLink {
-  label: string;
-  href: string;
-}
+import { email, phone, type SiteLink } from "@/data/site";
 
-export const sitemap: FooterLink[] = [
+export { instagram, socials, address } from "@/data/site";
+
+export const sitemap: SiteLink[] = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
@@ -12,23 +11,7 @@ export const sitemap: FooterLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const instagram: FooterLink = {
-  label: "Instagram",
-  href: "https://instagram.com/milcodestudio",
-};
-
-// LinkedIn, Behance and Dribbble URLs are still placeholders in the design
-export const socials: FooterLink[] = [
-  instagram,
-  { label: "LinkedIn", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "Dribbble", href: "#" },
-];
-
-export const contact: FooterLink[] = [
-  { label: "info@milcode.com", href: "mailto:info@milcode.com" },
-  { label: "+212 713 086 047", href: "tel:+212713086047" },
-];
+export const contact: SiteLink[] = [email, phone];
 
 // Only these routes get the full footer; every other page gets the compact row
 export const fullFooterRoutes = ["/"];

@@ -1,0 +1,288 @@
+/* /contact — ink on lime */
+.page {
+  width: 100%;
+  background-color: var(--accent);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* Hero */
+.hero {
+  /* fixed header (28px + 44px + 28px) + design spacing */
+  padding: calc(100px + 80px) var(--gutter) 64px;
+}
+
+.hero .label {
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(64px, 12vw, 184px);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: -0.06em;
+}
+
+/* Info + form */
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  margin: 0 var(--gutter);
+  padding: 56px 0 120px;
+  border-top: 1px solid var(--ink);
+}
+
+.info {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.infoLabel,
+.legend,
+.field {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.infoLabel {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* !important beats TransitionLink's inline display */
+.email {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: var(--touch);
+  font-size: clamp(28px, 2.8vw, 40px);
+  letter-spacing: -0.03em;
+  border-bottom: 1px solid var(--ink);
+}
+
+.infoText {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+}
+
+.socials li {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch);
+}
+
+/* Form */
+.formWrap {
+  flex: 999 1 640px;
+  min-width: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: 18px;
+  padding: 0;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  min-height: var(--touch);
+  padding: 12px 20px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+
+.pill[aria-pressed="true"] {
+  background-color: var(--ink);
+  color: var(--accent);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 22px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.input::placeholder {
+  color: #4a5a10;
+}
+
+.textarea {
+  font-size: 20px;
+  line-height: 1.4;
+  resize: vertical;
+}
+
+/* Ink focus ring — the lime accent ring would vanish on lime */
+.pill:focus-visible,
+.input:focus-visible,
+.submit:focus-visible,
+.email:focus-visible,
+.thanks:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.submitRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.note {
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: var(--touch);
+  padding: 20px 32px;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submit svg {
+  transition: transform 0.6s var(--ease);
+}
+
+.submit:hover:not(:disabled) svg {
+  transform: translate(2px, -2px);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.error {
+  margin: 0;
+  padding: 16px 20px;
+  border: 1px solid var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.errorLink {
+  border-bottom: 1px solid currentColor;
+}
+
+/* Honeypot — off-screen for people, still filled in by bots */
+.honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* Sent */
+.thanks {
+  flex: 999 1 640px;
+  min-width: 0;
+  align-self: flex-start;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.thanksNote {
+  display: block;
+  margin-top: 8px;
+  font-size: 17px;
+  letter-spacing: 0;
+  color: var(--text-body-dark);
+}
+
+/* Header status: "Open now — Casablanca 16:08" */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--touch);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background-color: currentColor;
+}
+
+.statusDotClosed {
+  background-color: transparent;
+}

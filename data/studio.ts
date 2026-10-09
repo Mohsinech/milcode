@@ -118,6 +118,17 @@ export const workingDetails: WorkingDetail[] = [
   },
 ];
 
+// Drives the "Open now — Casablanca 16:08" status on /contact.
+// Mirrors the [Mon–Fri, 9:00–19:00] placeholder above — update both together.
+export const openHours = {
+  timeZone: "Africa/Casablanca",
+  // 0 = Sunday … 6 = Saturday
+  days: [1, 2, 3, 4, 5],
+  // minutes since midnight, local studio time
+  open: 9 * 60,
+  close: 19 * 60,
+};
+
 export const tools: string[] = [
   "Figma",
   "Next.js",
